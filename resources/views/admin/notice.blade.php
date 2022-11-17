@@ -78,7 +78,7 @@
                                 <th>S.No</th>
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th>File</th>
+                                <th>Data</th>
                                 <th>Uploaded Date</th>
                                 <th>Action</th>
                             </tr>
@@ -103,11 +103,16 @@
                                             aria-expanded="false">
                                             <i class="ri-more-2-fill"></i>
                                         </a>
-
+                                        @php $cryptid=Crypt::encrypt($n->id); @endphp
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <li><a class="dropdown-item" href="#">Edit</a></li>
-                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();">Delete</a></li>
                                         </ul>
+                                        <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.notice.destroy', $cryptid) }}"
+                                                method="post" style="display: none;">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
                                     </div>
                                 </td>
                             </tr>

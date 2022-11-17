@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Spatie\Permission\Models\Role;
 
 class NoticeController extends Controller
@@ -116,7 +117,7 @@ class NoticeController extends Controller
      */
     public function destroy($id)
     {
-        if(Notice::find($id)->delete()) {
+        if(Notice::find(Crypt::decrypt($id))->delete()) {
             return back()->with('success', 'Notice deleted successfully');
         }
         else {

@@ -20,13 +20,13 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <p><a href="#UnderGraduate">Under Graduate</a></p>
+                                        <p><a class="btn btn-lg btn-primary" href="#UnderGraduate">Under Graduate</a></p>
                                     </th>
                                     <th>
-                                        <p><a href="#PostGraduate">Post Graduate</a></p>
+                                        <p><a class="btn btn-lg btn-warning" href="#PostGraduate">Post Graduate</a></p>
                                     </th>
                                     <th>
-                                        <p><a href="#Certificate">Certificate / Diploma</a></p>
+                                        <p><a class="btn btn-lg btn-info" href="#Certificate">Certificate / Diploma</a></p>
                                     </th>
                                 </tr>
                             </thead>

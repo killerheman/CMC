@@ -2,7 +2,7 @@
 @section('headerarea')
 @endsection
 @section('content')
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="margin-bottom: 50px;">
 
         <header class="page-heading clearfix">
             <div class="text-effect" data-content="College Gallery">
@@ -14,29 +14,36 @@
             <div class="page-row">
                 <p></p>
             </div>
-            <div class="row page-row">
-                <span id="ctl00_ContentPlaceHolder1_rptrAlbum">
-                    <span>
-                        <div class="col-md-3 col-sm-3 col-xs-12 text-center">
-                            <div class="album-cover">
-                                <a href='{{ route('photoGalleryImage') }}'>
-                                    <img class="img-responsive"
-                                        src='{{ asset('frontend/assets/images/home/classroom.jpg') }}'
-                                        alt="" /></a>
-                                <div class="desc">
-                                    <h4>
-                                        <small><a href='{{ route('photoGalleryImage') }}'>
-                                                College Gallery</a></small>
-                                    </h4>
+            <div class="container">
+                <div class="row">
+                    @if ($events)
+                        @foreach ($events as $event)
+                            <div class="col-md-4 col-sm-6">
+                                <div class="box">
+                                    <a href="{{ route('photoGalleryImage', Crypt::encrypt($event->id)) }}">
+                                    <img src="{{ asset($event->thumbnail) }}">
+                                    <div class="box-content">
+                                        <h3 class="title">{{ $event->name }}</h3>
+                                    </div>
+                                    {{-- <ul class="icon">
+                                        <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                    </ul> --}}
+                                    <h4 class="text-center">{{ $event->name }}</h4>
+                                </a>
                                 </div>
+
+
                             </div>
-                        </div>
-                    </span>
+                        @endforeach
+                    @else
+                        <h3 class="text-center">No Events Uploaded</h3>
+                    @endif
+                </div>
             </div>
-            <!--//page-row-->
         </div>
-        <!--//page-content-->
     </div>
+    <!--//page-row-->
 @section('scriptarea')
     <script type="text/javascript" src="assets/plugins/bootstrap-hover-dropdown.min.js"></script>
     <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>

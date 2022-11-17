@@ -10,14 +10,14 @@
                 </div><!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
-                        <form action="{{ route('admin.gallery.store') }}" method="POST">
+                        <form action="{{ route('admin.gallery.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row gy-4">
-                                <input type="hidden" name="id" value="{{ $event->id }}" />
+                                <input type="hidden" name="event_id" value="{{ $event->id }}" />
                                 <div class="col-xxl-3 col-md-6">
                                     <label for="gallery" class="form-label">Upload Photo</label>
                                     <div class="input-group">
-                                        <input type="file" class="form-control" id="gallery" name="file">
+                                        <input type="file" class="form-control" id="gallery" name="file[]" multiple>
                                         <button class="btn btn-primary" type="submit">Submit</button>
                                     </div>
                                 </div>
@@ -48,27 +48,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($events as $data)
-                                <tr>
-                                    <th>{{ $loop->index + 1 }}</th>
-                                    <td>{{ $data->name }}</td>
-                                    <td>{{ $data->images ?? '' }}</td>
-                                    <td>{{ $data->created_at }}</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="ri-more-2-fill"></i>
-                                            </a>
+                            @if ($events)
+                                @foreach ($events as $data)
+                                    <tr>
+                                        <th>{{ $loop->index + 1 }}</th>
+                                        <td>{{ $data->event->name }}</td>
+                                        <td><img src="{{ asset($data->image ?? '') }}" alt="{{ $data->event->name ?? ''}}" height="100" width="200"/></td>
+                                        <td>{{ $data->created_at }}</td>
+                                        <td>
+                                            @php $cryptid=Crypt::encrypt($data->id); @endphp
 
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                <li><a class="dropdown-item" href="#">Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                            @endforeach
-                            </tr>
+                                            <a class="btn btn-danger" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+
+                                            <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.gallery.destroy', $cryptid) }}"
+                                                method="post" style="display: none;">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td class="text-center" colspan="5" style="width: 100%">No Photo Available</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

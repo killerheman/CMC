@@ -91,8 +91,8 @@ Route::get('/download-online-study-material', [HomeController::class, 'downloadO
 Route::get('/college-placement', [HomeController::class, 'collegePlacement'])->name('collegePlacement');
 
 //PhotoGallery Menu
-Route::get('/photo-gallery', [HomeController::class, 'photoGallery'])->name('photoGallery');
-Route::get('/gallery-image', [HomeController::class, 'photoGalleryImage'])->name('photoGalleryImage');
+Route::get('/event-gallery', [HomeController::class, 'eventGallery'])->name('eventGallery');
+Route::get('/gallery-image/{id}', [HomeController::class, 'photoGalleryImage'])->name('photoGalleryImage');
 //News Menu
 Route::get('/news', [HomeController::class, 'news'])->name('news');
 //PressRelease Menu
@@ -117,7 +117,7 @@ Route::get('/students-satisfaction-survey', [HomeController::class, 'sss'])->nam
 Route::get('/admin',[LoginController::class, 'index'])->name('admin');
 Route::post('/login',[LoginController::class, 'store'])->name('login');
 
-Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
+Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => 'auth'],function(){
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
     Route::get('/logout',[AdminController::class,'logout'])->name('logout');
     Route::resource('/user', UserController::class);

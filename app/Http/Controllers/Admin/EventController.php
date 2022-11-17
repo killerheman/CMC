@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Error;
 use App\Models\Event;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 class EventController extends Controller
 {
@@ -38,12 +43,33 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required'
         ]);
-        Event::create([
-            'name' => $request->name
-        ]);
-        return redirect()->back()->with('success','Event created successfully.');
+        if ($request->hasFile('file'))
+        {
+            $filepath = 'upload/Event/';
+            foreach ($request->file('file') as $file) {
+                $name = 'Event-' . time() . '-' . rand(0, 99) . '.' . $file->extension();
+                $file->move(public_path($filepath), $name);
+                $eventpic = $filepath . $name;
+
+                $data = Event::create([
+                    'name' => $request->name,
+                    'thumbnail' => $eventpic
+                ]);
+            }
+            if ($data) {
+                return redirect()->back()->with('success', 'Event created successfully.');
+            }
+        }
+        else
+        {
+            $data = Event::create([
+                'name' => $request->name
+            ]);
+
+            return redirect()->back()->with('success', 'Event created successfully.');
+        }
     }
 
     /**
@@ -65,7 +91,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $events = Event::orderBy('id', 'desc')->get();
+        $editevent = Event::find(Crypt::decrypt($id));
+        return view('admin.event', compact('events', 'editevent'));
     }
 
     /**
@@ -77,7 +105,13 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        Event::find(Crypt::decrypt($id))->update([
+            'name' => $request->name
+        ]);
+        return redirect()->back()->with('success','Event updated successfully.');
     }
 
     /**
@@ -88,6 +122,19 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Crypt::decrypt($id);
+        try {
+            $res = Event::find($id)->delete();
+            if ($res) {
+                session()->flash('success', 'Event deleted sucessfully');
+            } else {
+                session()->flash('error', 'Event not deleted ');
+            }
+        } catch (Exception $ex) {
+            $url = URL::current();
+            Error::create(['url' => $url, 'message' => $ex->getMessage()]);
+            Session::flash('error', 'Server Error ');
+        }
+        return redirect()->back();
     }
 }

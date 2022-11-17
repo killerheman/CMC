@@ -132,7 +132,7 @@
                         <li><a href="{{ route('sss') }}">Student's Satisfaction Survey</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{ route('photoGallery') }}" >Photo Gallery</a></li>
+                <li class="nav-item"><a href="{{ route('eventGallery') }}" >Photo Gallery</a></li>
                 <li class="nav-item"><a href="{{ route('news') }}" >News</a></li>
                 {{-- <li class="nav-item"><a href="{{ route('pressRelease') }}" >Press Release</a></li> --}}
             </ul>

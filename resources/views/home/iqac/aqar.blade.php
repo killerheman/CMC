@@ -145,7 +145,7 @@
                                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingTwo">
                                         <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2016-2017.pdf') }}">AQAR 2019-20</a>
+                                            <a href="{{ asset('data/aqar/AQAR 2019-2020.pdf') }}">AQAR 2019-20</a>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
                                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingFour">
                                         <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2018-2019.pdf') }}">AQAR 2017-18</a>
+                                            <a href="{{ asset('data/aqar/AQAR 2017-2018.pdf ') }}">AQAR 2017-18</a>
                                         </div>
                                     </div>
                                 </div>

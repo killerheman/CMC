@@ -3,13 +3,20 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
+use App\Models\EventGallery;
+use App\Models\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        $notices = Notice::all();
+        $events = Event::all();
+        return view('home.index', compact('notices', 'events'));
     }
 
     //About Section
@@ -224,14 +231,18 @@ class HomeController extends Controller
     }
 
     //PhotoGallery Section
-    public function photoGallery()
+    public function eventGallery()
     {
-        return view('home.photo_gallery');
+        $events = Event::all();
+        return view('home.photo_gallery', compact('events'));
     }
 
-    public function photoGalleryImage()
+    public function photoGalleryImage($event_id)
     {
-        return view('home.gallery_image');
+        $event = Event::find(Crypt::decrypt($event_id));
+        $photos = EventGallery::where('event_id',Crypt::decrypt($event_id))->get();
+        Log::info('photos'.json_encode($photos));
+        return view('home.gallery_image', compact('photos', 'event'));
     }
 
     //News Section

@@ -13,7 +13,7 @@
                     <li class="breadcrumbs-label">You are here:</li>
                     <li><a href="Default.html">Home</a><i class="fa fa-angle-right"></i></li>
                     <li><a href="GalleryAlbum.html">Gallery</a><i class="fa fa-angle-right"></i></li>
-                    <li class="current"><span id="ctl00_ContentPlaceHolder1_lblSideHeading">College Gallery</span></li>
+                    <li class="current"><span id="ctl00_ContentPlaceHolder1_lblSideHeading">{{ $event->name }}</span></li>
                 </ul>
             </div>
             <!--//breadcrumbs-->
@@ -21,46 +21,17 @@
         <div class="page-content">
             <div class="row page-row">
 
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/classroom.jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/classroom.jpg') }}'
-                        alt='' height="500" width="500" /></a>
-
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/IMG-20221001-WA0012 (1).jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20211217_115535.jpg') }}'
-                        alt='' height="500" width="500" /></a>
-
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/IMG_20211217_115208.jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20211217_115208.jpg') }}'
-                        alt='' height="500" width="500" /></a>
-
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'
-                        alt='' style="height: 200px; width:300px;" /></a>
-
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                href='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'>
-                <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20220509_094517.jpg') }}'
-                    alt='' style="height: 200px; width:300px;" /></a>
-
+                @if( count($photos)>0 )
+                @foreach ($photos as $pic)
                     <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20220524_125231.jpg') }}'
-                        alt='' style="height: 200px; width:300px;" /></a>
-
-                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                href='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'>
-                <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20220815_091809_1.jpg') }}'
-                    alt='' style="height: 200px; width:300px;" /></a>
-
-                    <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" alt=''
-                    href='{{ asset('frontend/assets/images/home/IMG_20211217_115353.jpg') }}'>
-                    <img class="img-responsive img-thumbnail" src='{{ asset('frontend/assets/images/home/IMG_20220416_121515.jpg') }}'
-                        alt='' style="height: 200px; width:300px;" /></a>
-
+                    href='{{ asset($pic->image) }}'>
+                    <img class="img-responsive img-thumbnail" src='{{ asset($pic->image) }}'
+                        alt='' height="500" width="500" />
+                    </a>
+                @endforeach
+                @else
+                <h4 class="text-center">No photos available....</h4>
+                @endif
             </div>
             <!--//page-row-->
         </div>
