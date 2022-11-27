@@ -57,6 +57,7 @@ class BannerController extends Controller
        $data= Banner::create([
            'title2' => $request->title2,
            'title1' => $request->title1,
+           'link' => $request->link ?? '',
            'banner' => $banner,
         ]);
         if($data){
@@ -116,10 +117,11 @@ class BannerController extends Controller
         $data= Banner::find($id)->update([
            'title2' => $request->title2,
            'title1' => $request->title1,
+           'link' => $request->link ?? '',
 
         ]);
         if($data){
-        return redirect()->back()->with('success','New Banner Updated successfully.');
+        return redirect()->back()->with('success','Banner Updated successfully.');
         }
         else{
             return redirect()->back()->with('error','Banner not Updated');

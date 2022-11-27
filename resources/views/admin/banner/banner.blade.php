@@ -27,6 +27,11 @@
                                     <input type="text" class="form-control" name="title2" placeholder="Enter Title"value="{{ isset($editbanner) ? $editbanner->title2 : '' }}"
                                         required>
                                 </div>
+                                <div class="col-4 mb-4">
+                                    <label>Link (Url)</label>
+                                    <input type="text" class="form-control" name="link" placeholder="Enter Url"value="{{ isset($editbanner) ? $editbanner->link : '' }}"
+                                        required>
+                                </div>
                                 <div class="col-4" id="uploadfile">
                                     <label>Upload file</label>
                                     <input type="file" class="form-control" name="banner" value="{{ isset($editbanner) ? $editbanner->banner : '' }}">

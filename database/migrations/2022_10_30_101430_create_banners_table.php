@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('banner')->nullable();
             $table->string('title1')->nullable();
             $table->string('title2')->nullable();
+            $table->string('link')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
