@@ -7,7 +7,7 @@
                     <img src="{{ asset($banner->banner) }}"
                         alt="{{ $banner->title1 }}" height="500px" />
                     <p class="flex-caption text-center">
-                        <a href="{{ $banner->link }}" target="_blank"><span class="main">{{ $banner->title1 }}</span></a>
+                        <a href="{{ $banner->link }}" target="_blank"><span class="main" style="background: #f27f7869 !important;">{{ $banner->title1 }}</span></a>
                         <br />
                         <a href="{{ $banner->link }}" target="_blank"><span class="secondary clearfix">{{ $banner->title2 }}</span></a>
                     </p>
