@@ -237,4 +237,16 @@ class UserController extends Controller
         }
             return redirect()->back();
     }
+
+    public function lockscreen()
+    {
+        if(Auth::user()){
+            Session::put('user_id', Auth::user()->id);
+        }
+        $user_id = Session::get('user_id');
+        // dd($user_id);
+        $user = User::where('id', $user_id)->first();
+        Auth::logout();
+        return view('admin.auth.lockscreen', compact('user'));
+    }
 }

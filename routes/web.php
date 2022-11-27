@@ -121,6 +121,7 @@ Route::post('/login',[LoginController::class, 'store'])->name('login');
 Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => 'auth'],function(){
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
     Route::get('/logout',[AdminController::class,'logout'])->name('logout');
+
     Route::resource('/user', UserController::class);
     Route::get('user-profile/{id?}',[UserController::class,'profile'])->name('profile');
     Route::get('edit-user-profile/{id?}',[UserController::class,'editProfile'])->name('editprofile');
@@ -141,6 +142,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => 'auth'],function
 
 
 });
+
+Route::get('lockscreen', [UserController::class, 'lockscreen'])->name('lockscreen');
 
 
 Route::get('/optimize', function(){

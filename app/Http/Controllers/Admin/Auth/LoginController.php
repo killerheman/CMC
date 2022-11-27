@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -22,12 +23,23 @@ class LoginController extends Controller
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me))
         {
             $role = Auth::user()->roles[0]->name;
-            session()->flash('success','Welcome'. $role .'!');
+            if($request->lockscreen == 'lockscreen'){
+                session()->flash('success','Welcome Again '. $role .'!');
+                Session::forget('user_id');
+            }
+            else {
+                session()->flash('success','Welcome '. $role .'!');
+            }
             return redirect()->route('admin.dashboard');
         }
         else {
             session()->flash('error','Invalid Username or Password !');
-            return redirect('/admin');
+            if($request->lockscreen == 'lockscreen'){
+                return redirect()->back();
+            }
+            else {
+                return redirect('/admin');
+            }
         }
     }
 }
