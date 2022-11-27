@@ -10,7 +10,7 @@
                 </div><!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
-                        <form action="{{ isset($editevent) ? route('admin.event.update', $editevent->id) : route('admin.event.store') }}" method="POST">
+                        <form action="{{ isset($editevent) ? route('admin.event.update', $editevent->id) : route('admin.event.store') }}" method="POST" enctype="multipart/form-data">
                             @if (isset($editevent))
                                 @method('patch')
                             @endif
