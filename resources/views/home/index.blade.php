@@ -12,7 +12,31 @@
             <span style="font-size: 1.6rem;font-weight: bold;">Notice - </span>
         </div>
         <div class="col-sm-11" style="background-color: #f5f5f5;color:black;">
-            <marquee style="font-size: 12pt">Welcome to official website of C.M.College, Darbhanga</marquee>
+            <marquee style="font-size: 12pt">
+                @if ($topnotices)
+                    @foreach ($topnotices as $notice)
+                        @if ($notice->type == 'link')
+                        <span style="color: black;">
+                            <a href='{{ $notice->filename }}'><i class="fa fa-hand-o-right"
+                                    aria-hidden="true"></i>&nbsp;&nbsp;{{ $notice->title }}</a>
+                            <img src="{{ asset('frontend/assets/images/misc/new_red.gif') }}"
+                                id="ctl00_ContentPlaceHolder1_RptrAnnouncement_ctl00_imgBadge" />
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                        @elseif($notice->type == 'file')
+                            <span style="color: black;">
+                                <a href='{{ asset($notice->filename) }}'><i class="fa fa-hand-o-right"
+                                        aria-hidden="true"></i> &nbsp;&nbsp;{{ $notice->title }}</a>
+                                <img src="{{ asset('frontend/assets/images/misc/new_red.gif') }}"
+                                    id="ctl00_ContentPlaceHolder1_RptrAnnouncement_ctl00_imgBadge" />
+                            </span>
+                        @endif
+                        &nbsp;&nbsp;&nbsp;
+                    @endforeach
+                @else
+                <span>Welcome to official website of C.M.College, Darbhanga </span>
+                @endif
+            </marquee>
         </div>
     </div>
     <div class="row cols-wrapper">

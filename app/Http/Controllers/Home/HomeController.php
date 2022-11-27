@@ -15,8 +15,10 @@ class HomeController extends Controller
     public function index()
     {
         $notices = Notice::all();
+        $topnotices = Notice::take(3)->get();
+        // dd($topnotices);
         $events = Event::all();
-        return view('home.index', compact('notices', 'events'));
+        return view('home.index', compact('notices', 'events','topnotices'));
     }
 
     //About Section
