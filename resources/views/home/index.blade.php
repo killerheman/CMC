@@ -17,7 +17,7 @@
                     @foreach ($topnotices as $notice)
                         @if ($notice->type == 'link')
                         <span style="color: black;">
-                            <a href='{{ $notice->filename }}'><i class="fa fa-hand-o-right"
+                            <a href='{{ $notice->filename }}' target="_blank"><i class="fa fa-hand-o-right"
                                     aria-hidden="true"></i>&nbsp;&nbsp;{{ $notice->title }}</a>
                             <img src="{{ asset('frontend/assets/images/misc/new_red.gif') }}"
                                 id="ctl00_ContentPlaceHolder1_RptrAnnouncement_ctl00_imgBadge" />
@@ -25,7 +25,7 @@
                         &nbsp;&nbsp;&nbsp;
                         @elseif($notice->type == 'file')
                             <span style="color: black;">
-                                <a href='{{ asset($notice->filename) }}'><i class="fa fa-hand-o-right"
+                                <a href='{{ asset($notice->filename) }}' target="_blank"><i class="fa fa-hand-o-right"
                                         aria-hidden="true"></i> &nbsp;&nbsp;{{ $notice->title }}</a>
                                 <img src="{{ asset('frontend/assets/images/misc/new_red.gif') }}"
                                     id="ctl00_ContentPlaceHolder1_RptrAnnouncement_ctl00_imgBadge" />
