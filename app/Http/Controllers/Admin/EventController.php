@@ -48,18 +48,21 @@ class EventController extends Controller
         if ($request->hasFile('file'))
         {
             $filepath = 'upload/Event/';
-            foreach ($request->file('file') as $file) {
-                $name = 'Event-' . time() . '-' . rand(0, 99) . '.' . $file->extension();
-                $file->move(public_path($filepath), $name);
-                $eventpic = $filepath . $name;
+            $file = $request->file('file');
+            $name = 'Event-' . time() . '-' . rand(0, 99) . '.' . $file->extension();
+            $file->move(public_path($filepath), $name);
+            $eventpic = $filepath . $name;
 
-                $data = Event::create([
-                    'name' => $request->name,
-                    'thumbnail' => $eventpic
-                ]);
-            }
+            $data = Event::create([
+                'name' => $request->name,
+                'thumbnail' => $eventpic
+            ]);
+
             if ($data) {
                 return redirect()->back()->with('success', 'Event created successfully.');
+            }
+            else {
+                return redirect()->back()->with('error', 'Something went wrong !');
             }
         }
         else
