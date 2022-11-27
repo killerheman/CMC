@@ -30,20 +30,25 @@
                     </a>
                 </li>
 
-                <!-- User Menu -->
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{ route('admin.user.index') }}"  role="button" aria-expanded="false" >
-                        <i data-feather="users" class="icon-dual"></i> <span data-key="t-dashboards">User</span>
-                    </a>
-                </li>
+                @can('user')
+                    <!-- User Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{ route('admin.user.index') }}"  role="button" aria-expanded="false" >
+                            <i data-feather="users" class="icon-dual"></i> <span data-key="t-dashboards">User</span>
+                        </a>
+                    </li>
+                @endcan
 
-                <!-- Notice Menu -->
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{ route('admin.notice.index') }}"  role="button" aria-expanded="false" >
-                        <i data-feather="clipboard" class="icon-dual"></i> <span data-key="t-dashboards">Notice</span>
-                    </a>
-                </li>
+                @can('notice')
+                    <!-- Notice Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{ route('admin.notice.index') }}"  role="button" aria-expanded="false" >
+                            <i data-feather="clipboard" class="icon-dual"></i> <span data-key="t-dashboards">Notice</span>
+                        </a>
+                    </li>
+                @endcan
 
+                @can('event')
                 <!-- Event Menu -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('admin.event.index') }}"  role="button" aria-expanded="false" >
@@ -51,6 +56,9 @@
                     </a>
                 </li>
 
+                @endcan
+
+                @can('banner')
                 <!-- Banner Menu -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('admin.banner.index') }}"  role="button" aria-expanded="false" >
@@ -58,6 +66,9 @@
                     </a>
                 </li>
 
+                @endcan
+
+                @hasrole('Admin')
                 <!-- Role/Permission Menu -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards1" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
@@ -77,8 +88,10 @@
                         </ul>
                     </div>
                 </li>
+                @endrole
 
-                <!-- Role/Permission Menu -->
+                @can('aqar')
+                <!-- AQAR Menu -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                         <i data-feather="lock" class="icon-dual"></i> <span data-key="t-dashboards">AQAR</span>
@@ -94,6 +107,7 @@
                         </ul>
                     </div>
                 </li>
+                @endcan
 
             </ul>
         </div>

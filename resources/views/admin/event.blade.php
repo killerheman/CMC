@@ -2,6 +2,7 @@
 @section('title', 'Events')
 @section('main-content')
 
+    @can('event_create')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -41,6 +42,9 @@
         </div>
     </div>
 
+    @endcan
+
+    @can('event_read')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -55,7 +59,9 @@
                                 <th scope="col">Event Name</th>
                                 <th scope="col">Thumbnail</th>
                                 <th scope="col">Created at</th>
+                                @canany(['event_edit', 'event_delete'])
                                 <th scope="col">Action</th>
+                                @endcanany
                             </tr>
                         </thead>
                         <tbody>
@@ -68,6 +74,7 @@
                                     <td>
                                         <a href="{{ route('admin.gallery.show', $data->id) }}" class="btn btn-warning">View Image</i></a>
                                     </td>
+                                    @canany(['event_edit', 'event_delete'])
                                     <td>
                                         <div class="dropdown">
                                             <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
@@ -76,16 +83,23 @@
                                             </a>
                                             @php $cryptid=Crypt::encrypt($data->id); @endphp
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <li><a class="dropdown-item" href="{{ route('admin.event.edit', $cryptid) }}">Edit</a></li>
+                                                @can('event_edit')
+                                                    <li><a class="dropdown-item" href="{{ route('admin.event.edit', $cryptid) }}">Edit</a></li>
+                                                @endcan
+                                                @can('event_delete')
                                                 <li><a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();">Delete</a></li>
+                                                @endcan
                                             </ul>
+                                            @can('event_delete')
                                             <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.event.destroy', $cryptid) }}"
                                                 method="post" style="display: none;">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
+                                            @endcan
                                         </div>
                                     </td>
+                                    @endcanany
                             @endforeach
                             </tr>
                         </tbody>
@@ -94,6 +108,7 @@
             </div>
         </div>
     </div>
+    @endcan
     <!-- Grids in modals -->
 
 @section('script-area')

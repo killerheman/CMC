@@ -8,6 +8,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -134,7 +135,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(User::find(Crypt::decrypt($id))->delete()) {
+            return back()->with('success', 'User deleted successfully');
+        }
+        else {
+            return back()->with('failed', 'Oh! User did not deleted successfully');
+        }
     }
     public function profile()
     {

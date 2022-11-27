@@ -1,7 +1,8 @@
 @extends('admin.includes.layout', ['breadcrumb_title' => 'User'])
 @section('title', 'User')
 @section('main-content')
- 
+
+    @can('user_create')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -73,7 +74,9 @@
             </div>
         </div>
     </div>
+    @endcan
 
+    @can('user_read')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -91,7 +94,9 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Role</th>
+                                @canany(['user_edit', 'user_delete'])
                                 <th scope="col">Action</th>
+                                @endcanany
                             </tr>
                         </thead>
                         <tbody>
@@ -107,6 +112,8 @@
                                     <td>{{ $user->email ?? '' }}</td>
                                     <td>{{ $user->phone ?? '' }}</td>
                                     <td>{{ $user->roles[0]->name ?? '' }}</td>
+                                    @php $cryptid=Crypt::encrypt($user->id); @endphp
+                                    @canany(['user_edit', 'user_delete'])
                                     <td>
                                         <div class="dropdown">
                                             <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
@@ -115,12 +122,24 @@
                                             </a>
 
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <li><a class="dropdown-item" href="#">View</a></li>
-                                                <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                {{-- <li><a class="dropdown-item" href="#">View</a></li> --}}
+                                                @can('user_edit')
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                @endcan
+                                                @can('user_delete')
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                @endcan
                                             </ul>
+                                            @can('user_delete')
+                                                <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.user.destroy', $cryptid) }}"
+                                                        method="post" style="display: none;">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                    </form>
+                                                @endcan
                                         </div>
                                     </td>
+                                    @endcanany
                             @endforeach
                             </tr>
                         </tbody>
@@ -129,6 +148,7 @@
             </div>
         </div>
     </div>
+    @endcan
 
 
 
