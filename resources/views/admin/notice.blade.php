@@ -85,7 +85,7 @@
                         </thead>
                         <tbody>
 
-                            @if ($notices != '')
+                            @if ($notices)
                                 @foreach($notices as $n)
                                 <tr>
                                     <td>{{$loop->index+1}}</td>
