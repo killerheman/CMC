@@ -14,8 +14,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $notices = Notice::all();
-        $topnotices = Notice::take(3)->get();
+        $notices = Notice::orderBy('id','desc')->all();
+        $topnotices = Notice::orderBy('id','desc')->take(3)->get();
         // dd($topnotices);
         $events = Event::all();
         return view('home.index', compact('notices', 'events','topnotices'));
