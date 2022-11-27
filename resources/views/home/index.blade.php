@@ -115,10 +115,8 @@
                         style="color: #fa8303;font-weight: 700;">e-Tender Notices</span></h1>
                 <div class="section-content">
 
-                    @if ($tenders == '' || $tenders == null)
-                        <p>No notice uploaded</p>
-                    @else
-                    @foreach ($tenders as $notice)
+                    @if ($tenders)
+                        @foreach ($tenders as $notice)
                             @if ($notice->type == 'link')
                                 <p style="color: black;">
                                     <a href='{{ $notice->filename }}'><i class="fa fa-hand-o-right"
@@ -135,7 +133,8 @@
                                 </p>
                             @endif
                         @endforeach
-
+                    @else
+                        <p>No notice uploaded</p>
                     @endif
 
                     <h5 class="no-margin-top has-divider text-highlight"></h5>
