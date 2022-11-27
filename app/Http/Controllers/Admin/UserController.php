@@ -144,7 +144,6 @@ class UserController extends Controller
     }
     public function profile()
     {
-
         return view('admin.profile.user_profile');
     }
     public function editProfile()

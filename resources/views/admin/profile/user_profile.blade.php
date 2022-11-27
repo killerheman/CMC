@@ -54,12 +54,12 @@
                                                 <table class="table table-borderless mb-0">
                                                     <tbody>
                                                         <tr>
-                                                            <th class="ps-0" scope="row">Full Name :</th>
-                                                            <td class="text-muted">{{Auth::user()->first_name}}</td>
+                                                            <th class="ps-0" scope="row">Full Name : <span style="color: #f27f78;">{{Auth::user()->first_name}}</span></th>
+                                                            {{-- <td class="text-muted"></td> --}}
                                                         </tr>
                                                         <tr>
-                                                            <th class="ps-0" scope="row">Role :</th>
-                                                            <td class="text-muted">{{Auth::user()->roles[0]->name}}</td>
+                                                            <th class="ps-0" scope="row">Role : <span style="color: #f27f78;">{{Auth::user()->roles[0]->name}}</span></th>
+                                                            {{-- <td class="text-muted"></td> --}}
                                                         </tr>
                                                     </tbody>
                                                 </table>

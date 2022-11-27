@@ -122,6 +122,11 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => 'auth'],function
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
     Route::get('/logout',[AdminController::class,'logout'])->name('logout');
     Route::resource('/user', UserController::class);
+    Route::get('user-profile/{id?}',[UserController::class,'profile'])->name('profile');
+    Route::get('edit-user-profile/{id?}',[UserController::class,'editProfile'])->name('editprofile');
+    Route::post('user-profile-update',[UserController::class,'updateProfile'])->name('userupdate');
+    Route::post('user-pass-update',[UserController::class,'updatePassword'])->name('uppass');
+
     Route::resource('/role', RoleController::class);
     Route::resource('/permission', PermissionController::class);
     Route::get('/role-has-permission',[PermissionController::class,'rolePermission'])->name('rolePermission');
