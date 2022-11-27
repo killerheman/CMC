@@ -79,9 +79,9 @@
                             <li class="nav-item">
                                 <a href="{{route('admin.role.index')}}" class="nav-link" data-key="t-analytics"> Role </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{route('admin.permission.index')}}" class="nav-link" data-key="t-analytics">Permission</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="{{route('admin.rolePermission')}}" class="nav-link" data-key="t-analytics">Role has permission</a>
                             </li>
