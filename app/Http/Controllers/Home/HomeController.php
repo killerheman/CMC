@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Event;
 use App\Models\EventGallery;
 use App\Models\Notice;
@@ -14,12 +15,13 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $banners = Banner::orderBy('id','desc')->get();
         $notices = Notice::orderBy('id','desc')->get();
         $tenders = Notice::where('category','tenders')->orderBy('id','desc')->get();
         $topnotices = Notice::orderBy('id','desc')->take(3)->get();
         // dd($topnotices);
         $events = Event::all();
-        return view('home.index', compact('notices', 'events','topnotices','tenders'));
+        return view('home.index', compact('notices', 'events','topnotices','tenders', 'banners'));
     }
 
     //About Section
