@@ -5,7 +5,7 @@
             @foreach ($banners as $banner)
                 <li>
                     <img src="{{ asset($banner->banner) }}"
-                        alt="{{ $banner->title1 }}"  />
+                        alt="{{ $banner->title1 }}" height="500px" />
                     <p class="flex-caption text-center">
                         <span class="main">{{ $banner->title1 }}</span>
                         <br />
