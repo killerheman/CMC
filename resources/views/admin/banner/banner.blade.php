@@ -72,6 +72,7 @@
                                 <th>Banner</th>
                                 <th>Title 1</th>
                                 <th>Title 2</th>
+                                <th>Link</th>
                                 <th>Created_at</th>
                                 <th>Action</th>
                             </tr>
@@ -85,6 +86,7 @@
                                     style="height:60px;width:60px;" /></td>
                                 <td>{{$b->title1}}</td>
                                 <td>{{$b->title2}}</td>
+                                <td>{{$b->link}}</td>
                                 <td>{{$b->created_at}}</td>
                                 @php $bannerid=Crypt::encrypt($b->id); @endphp
                                 <td>
