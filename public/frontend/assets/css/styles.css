@@ -949,7 +949,7 @@ ul.custom-list-style li {
 
 .main-nav .nav .nav-item.active>a {
     background: #eb4c43;
-    color: #fff;
+    color: #fff !important;
 }
 
 .main-nav .nav .nav-item.active>a:before {
@@ -1202,6 +1202,10 @@ ul.custom-list-style li {
     padding: 10px 15px;
     font-size: 18px;
     text-transform: uppercase;
+}
+
+.flexslider .slides .flex-caption .main:hover {
+    color: white !important;
 }
 
 .flexslider .slides .flex-caption .secondary {
