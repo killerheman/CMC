@@ -92,7 +92,7 @@
                                     <td>{{$n->title}}</td>
                                     <td>{{$n->category}}</td>
                                     @if($n->type=='file')
-                                    <td><a href="{{asset({{$n->filename}})}}" target="_blank">View</a></td>
+                                    <td><a href="{{asset($n->filename)}}" target="_blank">View</a></td>
                                     @else
                                     <td><a href="{{$n->filename}}" target="_blank">View</a></td>
                                     @endif
