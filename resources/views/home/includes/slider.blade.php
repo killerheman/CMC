@@ -7,9 +7,9 @@
                     <img src="{{ asset($banner->banner) }}"
                         alt="{{ $banner->title1 }}" height="500px" />
                     <p class="flex-caption text-center">
-                        <span class="main">{{ $banner->title1 }}</span>
+                        <a href="{{ $banner->link }}" target="_blank"><span class="main">{{ $banner->title1 }}</span></a>
                         <br />
-                        <span class="secondary clearfix">{{ $banner->title2 }}</span>
+                        <a href="{{ $banner->link }}" target="_blank"><span class="secondary clearfix">{{ $banner->title2 }}</span></a>
                     </p>
                 </li>
             @endforeach
