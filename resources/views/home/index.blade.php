@@ -115,8 +115,8 @@
                         style="color: #fa8303;font-weight: 700;">e-Tender Notices</span></h1>
                 <div class="section-content">
 
-                    @if ($notices)
-                        @foreach ($notices as $notice)
+                    @if ($tenders)
+                        @foreach ($tenders as $notice)
                             @if ($notice->type == 'link')
                                 <p style="color: black;">
                                     <a href='{{ $notice->filename }}'><i class="fa fa-hand-o-right"

@@ -15,10 +15,11 @@ class HomeController extends Controller
     public function index()
     {
         $notices = Notice::orderBy('id','desc')->get();
+        $tenders = Notice::where('category','tenders')->orderBy('id','desc')->get();
         $topnotices = Notice::orderBy('id','desc')->take(3)->get();
         // dd($topnotices);
         $events = Event::all();
-        return view('home.index', compact('notices', 'events','topnotices'));
+        return view('home.index', compact('notices', 'events','topnotices','tenders'));
     }
 
     //About Section
