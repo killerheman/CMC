@@ -46,14 +46,14 @@
 
                 <!-- Event Menu -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#"  role="button" aria-expanded="false" >
+                    <a class="nav-link menu-link" href="{{ route('admin.event.index') }}"  role="button" aria-expanded="false" >
                         <i data-feather="camera" class="icon-dual"></i> <span data-key="t-dashboards">Events</span>
                     </a>
                 </li>
 
                 <!-- Banner Menu -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{ route('admin.notice.index') }}"  role="button" aria-expanded="false" >
+                    <a class="nav-link menu-link" href="{{ route('admin.banner.index') }}"  role="button" aria-expanded="false" >
                         <i data-feather="clipboard" class="icon-dual"></i> <span data-key="t-dashboards">Banner</span>
                     </a>
                 </li>
