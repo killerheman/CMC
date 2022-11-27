@@ -49,6 +49,8 @@
                         </li> --}}
                         <li><a href="http://www.naac.gov.in/" target="_blank"><i
                                     class="fa fa-long-arrow-right" style="color:white;"></i>NAAC</a></li>
+                        <li><a href="https://mail.hostinger.com/" target="_blank"><i class="fa fa-long-arrow-right" style="color:white;"></i>Webmail</a>
+                        </li>
 
                         {{-- <li><a href="http://www.ignou.ac.in/" target="_blank"><i
                                     class="fa fa-long-arrow-right" style="color:white;"></i>IGNOU</a></li>
