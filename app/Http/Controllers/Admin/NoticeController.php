@@ -48,7 +48,7 @@ class NoticeController extends Controller
                 'title' => $request->title,
                 'category' => $request->category,
                 'type' => $request->filetype,
-                'filename' => $fname
+                'filename' => 'upload/Notice/'.$fname
             ];
             if(Notice::create($data))
             {
