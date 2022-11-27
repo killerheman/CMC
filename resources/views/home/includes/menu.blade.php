@@ -130,6 +130,7 @@
                         <li><a href="{{ route('aisheReport') }}">AISHE Report</a></li>
                         <li><a href="{{ route('naacGrade') }}">NAAC Grade</a></li>
                         <li><a href="{{ route('sss') }}">Student's Satisfaction Survey</a></li>
+                        <li><a href="{{ route('nirf') }}">NIRF</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('eventGallery') }}" >Photo Gallery</a></li>

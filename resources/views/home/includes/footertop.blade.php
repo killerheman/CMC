@@ -83,7 +83,7 @@
                         <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"
                                 style="color:white;"></i>+91 9191683430</p>
                         <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"
-                                style="color:white;"></i><a href="mailto:support@npgc.in">principalcmcollege@yahoo.com</a>
+                                style="color:white;"></i><a href="mailto:principalcmcollege@yahoo.com">principalcmcollege@yahoo.com</a>
                         </p>
                     </div>
                 </div>

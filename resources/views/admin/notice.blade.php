@@ -85,38 +85,44 @@
                         </thead>
                         <tbody>
 
-                            @foreach($notices as $n)
-                            <tr>
-                                <td>{{$loop->index+1}}</td>
-                                <td>{{$n->title}}</td>
-                                <td>{{$n->category}}</td>
-                                @if($n->type=='file')
-                                <td><a href="{{asset('upload/Notice')}}/{{$n->filename}}" target="_blank">View</a></td>
-                                @else
-                                <td><a href="{{$n->filename}}" target="_blank">View</a></td>
-                                @endif
+                            @if ($notices != '')
+                                @foreach($notices as $n)
+                                <tr>
+                                    <td>{{$loop->index+1}}</td>
+                                    <td>{{$n->title}}</td>
+                                    <td>{{$n->category}}</td>
+                                    @if($n->type=='file')
+                                    <td><a href="{{asset('upload/Notice')}}/{{$n->filename}}" target="_blank">View</a></td>
+                                    @else
+                                    <td><a href="{{$n->filename}}" target="_blank">View</a></td>
+                                    @endif
 
-                                <td>{{$n->updated_at}}</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                            <i class="ri-more-2-fill"></i>
-                                        </a>
-                                        @php $cryptid=Crypt::encrypt($n->id); @endphp
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <li><a class="dropdown-item" href="#">Edit</a></li>
-                                            <li><a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();">Delete</a></li>
-                                        </ul>
-                                        <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.notice.destroy', $cryptid) }}"
-                                                method="post" style="display: none;">
-                                                @method('DELETE')
-                                                @csrf
-                                            </form>
-                                    </div>
-                                </td>
+                                    <td>{{$n->updated_at}}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <i class="ri-more-2-fill"></i>
+                                            </a>
+                                            @php $cryptid=Crypt::encrypt($n->id); @endphp
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                <li><a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();">Delete</a></li>
+                                            </ul>
+                                            <form id="delete-form-{{ $cryptid }}" action="{{ route('admin.notice.destroy', $cryptid) }}"
+                                                    method="post" style="display: none;">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            @else
+                            <tr>
+                                <td colspan="12" class="text-center">No Records Found</td>
                             </tr>
-                            @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

@@ -76,10 +76,10 @@
                         <h3 class="title">Postal Address</h3>
                         <p class="adr">
                             <span class="adr-group">
-                                <span class="street-address">National Post Graduate College</span><br>
-                                <span class="region">2, Rana Pratap Marg</span><br>
-                                <span class="postal-code">Lucknow - 226001</span><br>
-                                <span class="country-name">Uttar Pradesh (India)</span>
+                                <span class="street-address">C.M. College</span><br>
+                                <span class="region">Quilaghat, Rahamganj</span><br>
+                                <span class="postal-code">Darbhanga - 846004</span><br>
+                                <span class="country-name">Bihar (India)</span>
                             </span>
                         </p>
                     </section>
@@ -94,10 +94,9 @@
 
                     <section class="widget">
                         <h3 class="title">All Enquiries</h3>
-                        <p class="tel"><i class="fa fa-phone"></i>Phone : <a href="tel:+91522618312">0522
-                                4021304</a></p>
+                        <p class="tel"><i class="fa fa-phone"></i>Phone : <a href="tel:+919191683430" target='_blank'>+91 9191683430</a></p>
                         <p class="email"><i class="fa fa-envelope"></i>Email: <a
-                                href="mailto:support@npgc.in">support@npgc.in</a></p>
+                                href="mailto:principalcmcollege@yahoo.com" target='_blank'>principalcmcollege@yahoo.com</a></p>
                     </section>
                 </aside>
                 <!--//page-sidebar-->
@@ -110,7 +109,7 @@
                         <!--//You need to embed your own google map below-->
                         <!--//Ref: https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.472127560975!2d80.94102381958038!3d26.85673706896517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd0a819131cb%3A0x11553d04f3a32d9c!2sNational+P.G.College!5e0!3m2!1sen!2sin!4v1475865056859"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1206.2378580730024!2d85.89134851380634!3d26.1450174042117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb84ae3a028c9%3A0x6f21f89995fface2!2sC.%20M.%20College!5e0!3m2!1sen!2sin!4v1667933717345!5m2!1sen!2sin"
                             width="600" height="450" frameborder="0" style="border:0"
                             allowfullscreen></iframe>
                     </div>

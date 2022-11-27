@@ -16,10 +16,7 @@
                             @endif
                             @csrf
                             <div class="form-group row">
-                                <div class="col-4" id="uploadfile">
-                                    <label>Upload file</label>
-                                    <input type="file" class="form-control" name="banner" value="{{ isset($editbanner) ? $editbanner->banner : '' }}">
-                                </div>
+
                                 <div class="col-4">
                                     <label>Title 1</label>
                                     <input type="text" class="form-control" name="title1" placeholder="Enter Title" value="{{ isset($editbanner) ? $editbanner->title1 : '' }}"
@@ -29,6 +26,10 @@
                                     <label>Title 2</label>
                                     <input type="text" class="form-control" name="title2" placeholder="Enter Title"value="{{ isset($editbanner) ? $editbanner->title2 : '' }}"
                                         required>
+                                </div>
+                                <div class="col-4" id="uploadfile">
+                                    <label>Upload file</label>
+                                    <input type="file" class="form-control" name="banner" value="{{ isset($editbanner) ? $editbanner->banner : '' }}">
                                 </div>
                             </div>
                             @if (isset($editbanner))

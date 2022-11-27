@@ -109,7 +109,7 @@ Route::get('/ssr', [HomeController::class, 'ssr'])->name('ssr');
 Route::get('/aishe-report', [HomeController::class, 'aisheReport'])->name('aisheReport');
 Route::get('/naac-grade', [HomeController::class, 'naacGrade'])->name('naacGrade');
 Route::get('/students-satisfaction-survey', [HomeController::class, 'sss'])->name('sss');
-
+Route::get('/nirf', [HomeController::class, 'nirf'])->name('nirf');
 
 
 

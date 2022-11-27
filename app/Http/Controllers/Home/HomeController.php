@@ -304,5 +304,8 @@ class HomeController extends Controller
         return view('home.iqac.sss');
     }
 
+    public function nirf(){
+        return view('home.iqac.nirf');
+    }
 
 }

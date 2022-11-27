@@ -54,7 +54,7 @@
                 <!-- Banner Menu -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('admin.banner.index') }}"  role="button" aria-expanded="false" >
-                        <i data-feather="clipboard" class="icon-dual"></i> <span data-key="t-dashboards">Banner</span>
+                        <i data-feather="airplay" class="icon-dual"></i> <span data-key="t-dashboards">Banner</span>
                     </a>
                 </li>
 

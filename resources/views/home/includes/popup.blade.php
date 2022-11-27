@@ -17,32 +17,32 @@
             <div class="modal-body">
                 <div class="row ">
                     <div class="text-center ">
-                        <a href="https://admission.npgc.in/result" class="btn btn-success btn-lg">View
+                        <a href="#" class="btn btn-success btn-lg">View
                             Entrance Result</a>
                     </div>
 
                 </div>
                 <div class="row ">
                     <div class="col-md-4 text-center ">
-                        <a href="Admission-AdmissionSchedules.html">
+                        <a href="#">
                             <img src="assets/images/misc/AdmissionGlance.png" /></a>
                     </div>
                     <div class="col-md-4 text-center ">
-                        <a href="Admission-Seats.html">
+                        <a href="#">
                             <img src="assets/images/misc/SeatsOffered.png" /></a>
                     </div>
                     <div class="col-md-4 text-center ">
-                        <a href="assets/Admission/College.pdf">
+                        <a href="#">
                             <img src="assets/images/misc/Luaccet2022.png" /></a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <a href="http://npgc.in/assets/Admission/Luacmat.pdf">
+                        <a href="#">
                             <img src="assets/images/misc/Luacmat2022.png" /></a>
                     </div>
                     <div class="col-md-4 text-center">
-                        <a href="http://admission.npgc.in/">
+                        <a href="#">
                             <img src="assets/images/misc/ApplyNow.png" /></a>
                     </div>
                 </div>

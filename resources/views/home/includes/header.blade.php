@@ -5,7 +5,7 @@
                 <p class="phone" style="font-size: 13px"><i class="fa fa-phone" style="color: white;"></i><a
                         href="tel:+915222618312" style="color: white;">Call us 9191683430</a></p>
                 <p class="email" style="font-size: 13px"><i class="fa fa-envelope" style="color: white;"></i><a
-                        href="mailto:support@npgc.in" style="color: white;">principalcmcollege@yahoo.com</a></p>
+                        href="mailto:principalcmcollege@yahoo.com" style="color: white;">principalcmcollege@yahoo.com</a></p>
             </div>
             <!--//social-icons-->
             <div class="form-group">
