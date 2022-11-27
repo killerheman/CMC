@@ -1197,14 +1197,14 @@ ul.custom-list-style li {
 
 .flexslider .slides .flex-caption .main {
     display: inline-block;
-    background: #f27f78;
+    background: #000000ab;
     margin-bottom: 5px;
     padding: 10px 15px;
     font-size: 18px;
     text-transform: uppercase;
 }
 
-.flexslider .slides .flex-caption .main:hover {
+.flex-caption .main:hover {
     color: white !important;
 }
 
