@@ -112,15 +112,16 @@ class CriteriaController extends Controller
             $request->file->move(public_path('upload/AQAR/Criteria '.$request->criteria_id.'/'),$mainpic);
             $filepath = 'upload/AQAR/Criteria '.$request->criteria_id.'/'.$mainpic;
             $data= Criteria::find($id)->update(['path' => $filepath]);
+            unlink($request->oldfile);
         }
         $data= Criteria::find($id)->update([
            'name' => $request->name,
         ]);
         if($data){
-        return redirect()->back()->with('success','Criteria updated successfully.');
+        return redirect()->route('admin.criteria.show',$request->criteria_id)->with('success','Criteria updated successfully.');
         }
         else{
-            return redirect()->back()->with('error','Something went wrong !');
+            return redirect()->route('admin.criteria.show',$request->criteria_id)->with('error','Something went wrong !');
         }
     }
 
@@ -134,10 +135,13 @@ class CriteriaController extends Controller
     {
         $id=Crypt::decrypt($id);
         try{
-                $res=Criteria::find($id)->delete();
+                // $res=Criteria::find($id)->delete();
+                $res=Criteria::find($id);
+                unlink($res->path);
+                $res = $res->delete();
                 if($res)
                 {
-                    session()->flash('success','Criteria deleted ducessfully');
+                    session()->flash('success','Criteria deleted Sucessfully');
                 }
                 else
                 {

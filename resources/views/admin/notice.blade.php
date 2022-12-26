@@ -7,56 +7,78 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header align-items-center d-flex">
-                        <h4 class="card-title mb-0 flex-grow-1">Add Notice</h4>
+                        <h4 class="card-title mb-0 flex-grow-1">{{isset($Notice_data)?'Update Notice':"Add Notice";}}</h4>
                     </div><!-- end card header -->
                     <div class="card-body">
                         <div class="live-preview">
-                            <form method="post" action="{{ route('admin.notice.store') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ isset($Notice_data)?route('admin.notice.update',$Notice_data->id):route('admin.notice.store')}}" enctype="multipart/form-data">
                                 @csrf
+                                @isset($Notice_data)
+                                    @method('patch')
+                                @endisset
                                 <div class="form-group row">
                                     <div class="col-4">
                                         <label>Title</label>
-                                        <input type="text" class="form-control" name="title" placeholder="Enter Title"
+                                        <input type="text" class="form-control" name="title" placeholder="Enter Title" value="{{isset($Notice_data->title)?$Notice_data->title:'';}}" 
                                             required>
                                     </div>
                                     <div class="col-sm-2">
                                         <label>Notice Category</label>
                                         <select name="category" class="form-control" required>
                                             <option value="" selected disabled>Select Category</option>
-                                            <option value="notice">Latest Notice</option>
-                                            <option value="admission">Admission</option>
-                                            <option value="examination">Examination</option>
-                                            <option value="events">Events</option>
-                                            <option value="seminars">Seminars</option>
-                                            <option value="tenders">Tenders</option>
+                                            <option value="notice" {{ isset($Notice_data->category)?($Notice_data->category=='notice'?'selected':''):'' }}>Latest Notice</option>
+                                            <option value="admission" {{ isset($Notice_data->category)?($Notice_data->category=='admission'?'selected':''):'' }}>Admission</option>
+                                            <option value="examination" {{ isset($Notice_data->category)?($Notice_data->category=='examination'?'selected':''):'' }}>Examination</option>
+                                            <option value="events" {{ isset($Notice_data->category)?($Notice_data->category=='events'?'selected':''):'' }}>Events</option>
+                                            <option value="seminars" {{ isset($Notice_data->category)?($Notice_data->category=='seminars'?'selected':''):'' }}>Seminars</option>
+                                            <option value="tenders" {{ isset($Notice_data->category)?($Notice_data->category=='tenders'?'selected':''):'' }}>Tenders</option>
                                         </select>
                                     </div>
+                                    <!-- @isset($Notice_data->type)
+                                        @if($Notice_data->type=='file')
+                                            $filedisable = 'disabled'  
+                                        @elseif($Notice_data->type=='link')
+                                            $linkdisable = "disabled";
+                                        @endif
+                                    @endisset -->
                                     <div class="form-check col-1 mt-3">
                                         <input class="form-check-input" type="radio" name="filetype" value="file"
-                                            id="filetype">
+                                            id="filetype" {{ isset($Notice_data->type)?($Notice_data->type=='file'? 'checked' : 'disabled'):""}} >
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             File
                                         </label>
                                     </div>
-                                    <div class="form-check col-1 mt-3">
+                                    <div class="form-check col-1 mt-3" >
                                         <input class="form-check-input" type="radio" name="filetype" value="link"
-                                            id="linktype">
+                                            id="linktype" {{ isset($Notice_data->type)?($Notice_data->type=='link'? 'checked' : 'disabled'):""}} >
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Link
                                     </div>
-                                    <div class="col-4" id="uploadfile">
+                                    <div class="col-4" id="uploadfile" style="display:{{ isset($Notice_data->type)?($Notice_data->type=='file'? 'inline' : 'none'):'none'}};">
                                         <label>Upload file</label>
                                         <input type="file" class="form-control" name="file">
+                                        @isset($Notice_data->filename) 
+                                        @if(!empty($Notice_data->filename) && $Notice_data->type=='file')
+                                            <a href="{{url($Notice_data->filename)}}" target="_blank" class="btn btn-warning"/>View</a>
+                                            <input type="hidden" name="oldfile" value="{{isset($Notice_data->filename)?$Notice_data->filename:'';}}">
+                                        @endif
+                                        @endisset
                                     </div>
-                                    <div class="col-4" id="uploadlink">
+                                    <div class="col-4" id="uploadlink" style="display:{{ isset($Notice_data->type)?($Notice_data->type=='link'? 'inline' : 'none'):'none'}};">
                                         <label>Upload Link</label>
-                                        <input type="text" class="form-control" name="link">
+                                        <input type="text" class="form-control" name="link" value="{{isset($Notice_data->filename)?($Notice_data->type=='link'?$Notice_data->filename:''):'';}}">
+                                        @isset($Notice_data->filename) 
+                                        @if(!empty($Notice_data->filename) && $Notice_data->type=='link')
+                                            <!-- <a href="{{url($Notice_data->filename)}}" target="_blank" class="btn btn-warning"/>View</a> -->
+                                            <input type="hidden" name="oldfile" value="{{isset($Notice_data->filename)?$Notice_data->filename:'';}}">
+                                        @endif
+                                        @endisset
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-2 sub">
                                         <br />
-                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-block">{{isset($Notice_data)?'Update':"Submit";}}</button>
                                     </div>
                                 </div>
                             </form>
@@ -97,9 +119,9 @@
                                         <td>{{$n->title}}</td>
                                         <td>{{$n->category}}</td>
                                         @if($n->type=='file')
-                                        <td><a href="{{asset($n->filename)}}" target="_blank">View</a></td>
+                                        <td><a href="{{asset($n->filename)}}" class="btn btn-warning btn-sm" target="_blank">View</a></td>
                                         @else
-                                        <td><a href="{{$n->filename}}" target="_blank">View</a></td>
+                                        <td><a href="{{$n->filename}}" class="btn btn-warning btn-sm" target="_blank">View</a></td>
                                         @endif
 
                                         <td>{{$n->updated_at}}</td>
@@ -113,7 +135,7 @@
                                                 @php $cryptid=Crypt::encrypt($n->id); @endphp
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     @can('notice_edit')
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('admin.notice.edit',$cryptid) }}" >Edit</a></li>
                                                     @endcan
                                                     @can('notice_delete')
                                                     <li><a class="dropdown-item" href="#" onclick="event.preventDefault();document.getElementById('delete-form-{{ $cryptid }}').submit();">Delete</a></li>
@@ -151,18 +173,14 @@
     @section('script-area')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#uploadfile").hide();
-            $("#uploadlink").hide();
             $("#filetype").click(function() {
-                $("#uploadfile").show();
-                $("#uploadlink").hide();
+                $('#uploadfile').css("display","inline");
+                $("#uploadlink").css("display","none");
             });
             $("#linktype").click(function() {
-                $("#uploadlink").show();
-                $("#uploadfile").hide();
+                $("#uploadlink").css("display","inline");
+                $('#uploadfile').css("display","none");       
             });
-        });
     </script>
     @endsection
 

@@ -94,7 +94,10 @@ class NoticeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $id             =   Crypt::Decrypt($id);
+        $Notice_data   =   Notice::find($id);
+        $notices        =   Notice::get()->all();
+        return view('admin.notice',compact('Notice_data','notices'));
     }
 
     /**
@@ -106,7 +109,56 @@ class NoticeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        if($request->hasFile('file'))
+        {
+            $fext=$request->file('file')->extension();
+            $fname=date('d-M-Y').$request->cat.rand(0,9).rand(0,9).rand(0,9).rand(0,9).".".$fext;
+            $request->file->move(public_path('upload/Notice'),$fname);
+            $data = [
+                'title' => $request->title,
+                'category' => $request->category,
+                'type' => $request->filetype,
+                'filename' => 'upload/Notice/'.$fname
+            ];
+            if(Notice::find($id)->update($data))
+            {
+                unlink($request->oldfile);
+                return back()->with('success', 'Notice updated successfully');
+            }
+            else {
+                return back()->with('error', 'Oh! Notice did not update successfully');
+            }
+        }
+        elseif(isset($request->link) && !empty($request->link))
+        {
+            $data = [
+                'title' => $request->title,
+                'category' => $request->category,
+                'type' => $request->filetype,
+                'filename' => $request->link
+            ];
+            if(Notice::find($id)->update($data)) {
+                return back()->with('success', 'Notice Updated successfully');
+            }
+            else {
+                return back()->with('error', 'Oh! Notice did not update successfully');
+            }
+        }else{
+            $data = [
+                'title' => $request->title,
+                'category' => $request->category,
+                'type' => $request->filetype,
+                'filename' => $request->filetype=='file'?$request->oldfile:$request->oldfile
+            ];
+            if(Notice::find($id)->update($data)) {
+                return back()->with('success', 'Notice Updated successfully');
+            }
+            else {
+                return back()->with('error', 'Oh! Notice did not update successfully');
+            }
+        }
+        
     }
 
     /**

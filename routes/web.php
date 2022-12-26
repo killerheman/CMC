@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SessionWiseController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Admin\BannerController;
 use Illuminate\Support\Facades\Artisan;
@@ -139,6 +140,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => 'auth'],function
     Route::resource('/aqar', AqarController::class);
     Route::resource('/criteria', CriteriaController::class);
     Route::resource('/banner', BannerController::class);
+    Route::resource('/sessionwise', SessionWiseController::class);
 
 
 });

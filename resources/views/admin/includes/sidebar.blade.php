@@ -102,7 +102,7 @@
                                 <a href="{{route('admin.aqar.index')}}" class="nav-link" data-key="t-analytics"> Criteria Wise</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('admin.role.index')}}" class="nav-link" data-key="t-analytics">Session Wise</a>
+                                <a href="{{route('admin.sessionwise.index')}}" class="nav-link" data-key="t-analytics">Session Wise</a>
                             </li>
                         </ul>
                     </div>
