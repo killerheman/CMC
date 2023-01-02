@@ -132,13 +132,14 @@
                                         </div>
                                     </div>
                                 </div>
+                            @foreach ($session as $data)
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingTwo">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
                                                 aria-controls="collapseTwo">
-                                                AQAR 2019-20
+                                                {{$data->session}}
                                             </a>
                                         </h4>
                                     </div>
@@ -149,7 +150,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
+                            @endforeach
+                                {{-- <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingThree">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
@@ -199,7 +201,7 @@
                                             <a href="{{ asset('data/aqar/AQAR 2016-2017.pdf') }}">AQAR 2016-17</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
