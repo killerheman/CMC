@@ -147,7 +147,7 @@
                                     <div id="collapse{{$loop->index + 1}}" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingTwo">
                                         <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2019-2020.pdf') }}">{{$data->title}}</a>
+                                            <a href="{{url($data->upload)}}" target="_blank">{{$data->title}}</a>
                                         </div>
                                     </div>
                                 </div>
