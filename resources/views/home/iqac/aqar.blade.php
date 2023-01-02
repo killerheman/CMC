@@ -119,18 +119,17 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" href="{{ route('criteria') }}">
                                                 AQAR 2020-21
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                    {{-- <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                                         aria-labelledby="headingOne">
                                         <div class="panel-body">
                                             <a href="#">AQAR 2020-21</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             @isset($session)
                             @foreach ($session as $data)

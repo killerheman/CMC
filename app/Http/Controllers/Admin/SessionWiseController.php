@@ -42,7 +42,7 @@ class SessionWiseController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
         $request->validate([
             "session"=>'required',
             "title"=>'nullable',
@@ -140,7 +140,7 @@ class SessionWiseController extends Controller
         $id=Crypt::decrypt($id);
         try{
             $res=SessionWiseModel::find($id);
-            dd($res);
+            // dd($res);
             unlink($res->upload);
             $res = $res->delete();
             if($res)
