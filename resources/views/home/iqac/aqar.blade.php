@@ -149,57 +149,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingThree">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse"
-                                                data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                AQAR 2018-19
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                        aria-labelledby="headingThree">
-                                        <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2018-2019.pdf') }}">AQAR 2018-19</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingFour">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse"
-                                                data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-                                                aria-controls="collapseFour">
-                                                AQAR 2017-18
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                                        aria-labelledby="headingFour">
-                                        <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2017-2018.pdf ') }}">AQAR 2017-18</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingFive">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse"
-                                                data-parent="#accordion" href="#collapseFive" aria-expanded="false"
-                                                aria-controls="collapseFive">
-                                                AQAR 2016-17
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
-                                        aria-labelledby="headingFive">
-                                        <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2016-2017.pdf') }}">AQAR 2016-17</a>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
