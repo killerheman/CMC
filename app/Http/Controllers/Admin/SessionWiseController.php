@@ -138,9 +138,9 @@ class SessionWiseController extends Controller
     public function destroy($id)
     {
         $id=Crypt::decrypt($id);
-dd($id);
         try{
             $res=SessionWiseModel::find($id);
+            dd($res);
             unlink($res->upload);
             $res = $res->delete();
             if($res)
