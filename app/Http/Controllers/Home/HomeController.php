@@ -276,7 +276,9 @@ class HomeController extends Controller
 
     public function aqar()
     {
-        return view('home.iqac.aqar');
+        $session = SessionWiseModel::get()->all();
+        return view('home.iqac.aqar',compact('session'));
+        // return view('home.iqac.aqar');
     }
 
     public function iqacComposition()
