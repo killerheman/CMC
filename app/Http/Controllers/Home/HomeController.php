@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Event;
 use App\Models\EventGallery;
+use App\Models\SessionWiseModel;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
