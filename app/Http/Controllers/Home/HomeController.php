@@ -313,4 +313,8 @@ class HomeController extends Controller
         return view('home.iqac.nirf');
     }
 
+    public function criteria(){
+        return view('home.iqac.criteria');
+    }
+
 }
