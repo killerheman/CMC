@@ -138,13 +138,13 @@
                                     <div class="panel-heading" role="tab" id="headingTwo">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
-                                                data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                                data-parent="#accordion" href="#collapse{{$loop->index + 1}}" aria-expanded="false"
                                                 aria-controls="collapseTwo">
                                                 {{$data->session}}
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                    <div id="collapse{{$loop->index + 1}}" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingTwo">
                                         <div class="panel-body">
                                             <a href="{{ asset('data/aqar/AQAR 2019-2020.pdf') }}">{{$data->title}}</a>
