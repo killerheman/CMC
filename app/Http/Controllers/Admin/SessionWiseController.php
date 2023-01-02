@@ -42,7 +42,7 @@ class SessionWiseController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $request->validate([
             "session"=>'required',
             "title"=>'nullable',
@@ -138,10 +138,11 @@ class SessionWiseController extends Controller
     public function destroy($id)
     {
         $id=Crypt::decrypt($id);
+dd($id);
         try{
             $res=SessionWiseModel::find($id);
             unlink($res->upload);
-            $res = $res->delete();    
+            $res = $res->delete();
             if($res)
             {
                 session()->flash('success','AQAR deleted Sucessfully');
@@ -158,6 +159,6 @@ class SessionWiseController extends Controller
             Session::flash('error','Server Error ');
         }
         return redirect()->back();
-        
+
     }
 }
