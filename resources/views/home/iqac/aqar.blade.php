@@ -132,6 +132,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            @isset($session)
                             @foreach ($session as $data)
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingTwo">
@@ -151,6 +152,7 @@
                                     </div>
                                 </div>
                             @endforeach
+                            @endisset
                                 {{-- <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingThree">
                                         <h4 class="panel-title">
