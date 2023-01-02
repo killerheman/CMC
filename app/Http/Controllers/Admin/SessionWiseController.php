@@ -140,8 +140,9 @@ class SessionWiseController extends Controller
         $id=Crypt::decrypt($id);
         try{
             $res=SessionWiseModel::find($id);
+            // dd($res);
             unlink($res->upload);
-            $res = $res->delete();    
+            $res = $res->delete();
             if($res)
             {
                 session()->flash('success','AQAR deleted Sucessfully');
@@ -158,6 +159,6 @@ class SessionWiseController extends Controller
             Session::flash('error','Server Error ');
         }
         return redirect()->back();
-        
+
     }
 }

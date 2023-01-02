@@ -119,38 +119,39 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
-                                                href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" href="{{ route('criteria') }}">
                                                 AQAR 2020-21
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                    {{-- <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                                         aria-labelledby="headingOne">
                                         <div class="panel-body">
                                             <a href="#">AQAR 2020-21</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
+                            @isset($session)
                             @foreach ($session as $data)
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingTwo">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
-                                                data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                                data-parent="#accordion" href="#collapse{{$loop->index + 1}}" aria-expanded="false"
                                                 aria-controls="collapseTwo">
                                                 {{$data->session}}
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                    <div id="collapse{{$loop->index + 1}}" class="panel-collapse collapse" role="tabpanel"
                                         aria-labelledby="headingTwo">
                                         <div class="panel-body">
-                                            <a href="{{ asset('data/aqar/AQAR 2019-2020.pdf') }}">AQAR 2019-20</a>
+                                            <a href="{{url($data->upload)}}" target="_blank">{{$data->title}}</a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
+                            @endisset
                                 {{-- <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingThree">
                                         <h4 class="panel-title">
