@@ -22,12 +22,14 @@
                                     <label for="role" class="form-label">Session</label>
                                     <select name="session" class="form-select">
                                         <option value="">--Select Session--</option>
-                                        <option value="2017" {{ isset($Session_data->session)?($Session_data->session==2017?'selected':''):'' }}>2017</option>
-                                        <option value="2018" {{ isset($Session_data->session)?($Session_data->session==2018?'selected':''):'' }}>2018</option>
-                                        <option value="2019" {{ isset($Session_data->session)?($Session_data->session==2019?'selected':''):'' }}>2019</option>
-                                        <option value="2020" {{ isset($Session_data->session)?($Session_data->session==2020?'selected':''):'' }}>2020</option>
-                                        <option value="2021" {{ isset($Session_data->session)?($Session_data->session==2021?'selected':''):'' }}>2021</option>
-                                        <option value="2022" {{ isset($Session_data->session)?($Session_data->session==2022?'selected':''):'' }}>2022</option>
+                                        <option value="2016-17" {{ isset($Session_data->session)?($Session_data->session==2016-17?'selected':''):'' }}>2016-17</option>
+                                        <option value="2017-18" {{ isset($Session_data->session)?($Session_data->session==2017-18?'selected':''):'' }}>2017-18</option>
+                                        <option value="2018-19" {{ isset($Session_data->session)?($Session_data->session==2018-19?'selected':''):'' }}>2018-19</option>
+                                        <option value="2019-20" {{ isset($Session_data->session)?($Session_data->session==2019-20?'selected':''):'' }}>2019-20</option>
+                                        <option value="2020-21" {{ isset($Session_data->session)?($Session_data->session==2020-21?'selected':''):'' }}>2020-21</option>
+                                        <option value="2021-22" {{ isset($Session_data->session)?($Session_data->session==2021-22?'selected':''):'' }}>2021-22</option>
+                                        <option value="2022-23" {{ isset($Session_data->session)?($Session_data->session==2022-23?'selected':''):'' }}>2022-23</option>
+                                        <option value="2023-24" {{ isset($Session_data->session)?($Session_data->session==2023-24?'selected':''):'' }}>2023-24</option>
                                     </select>
                                 </div>
 
