@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Event;
 use App\Models\EventGallery;
 use App\Models\SessionWiseModel;
+use App\Models\criteria;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -317,7 +318,8 @@ class HomeController extends Controller
     }
 
     public function criteria(){
-        return view('home.iqac.criteria');
+        $criteria   =   criteria::get()->groupBy('criteria_id');
+        return view('home.iqac.criteria',compact('criteria'));
     }
 
 }

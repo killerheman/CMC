@@ -209,9 +209,14 @@
                             <div class="tab" role="tabpanel">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#Section1" aria-controls="home"
-                                            role="tab" data-toggle="tab">Criteria 1</a></li>
-                                    <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab"
+                                    @isset($criteria)
+                                    @for($i=1;count($criteria)>=$i;$i++)
+                                        <li role="presentation" class="{{$i==1?'active':''}}"><a href="#Section{{ $i }}" aria-controls="home"
+                                                role="tab" data-toggle="tab">Criteria {{ $i }}</a>
+                                        </li>
+                                    @endfor
+                                    @endisset
+                                    {{-- <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab"
                                             data-toggle="tab">Criteria 2</a></li>
                                     <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
                                             data-toggle="tab">Criteria 3</a></li>
@@ -222,11 +227,15 @@
                                     <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
                                             data-toggle="tab">Criteria 3</a></li>
                                     <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
-                                            data-toggle="tab">Criteria 3</a></li>
+                                            data-toggle="tab">Criteria 3</a></li> --}}
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabs">
-                                    <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                                    @isset($criteria)
+                                    @php $cindex=1; @endphp
+                                    @foreach($criteria as $crit_data)
+                                    @foreach($crit_data as $all_data)
+                                    <div role="tabpanel" class="tab-pane fade in {{$cindex==1?'active':''}}" id="Section{{$all_data->criteria_id}}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="panel-group" id="accordion" role="tablist"
@@ -258,7 +267,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="Section2">
+                                    @endforeach
+                                    @php $cindex++; @endphp
+                                    @endforeach
+                                    @endisset
+                                    {{-- <div role="tabpanel" class="tab-pane fade" id="Section2">
                                         <h3>Section 2</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna
                                             a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in
@@ -269,7 +282,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna
                                             a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in
                                             tortor. Proin accumsan felis ac felis dapibus, non iaculis mi varius.</p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
