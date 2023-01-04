@@ -209,33 +209,42 @@
                             <div class="tab" role="tabpanel">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    @isset($criteria)
-                                    @for($i=1;count($criteria)>=$i;$i++)
-                                        <li role="presentation" class="{{$i==1?'active':''}}"><a href="#Section{{ $i }}" aria-controls="home"
-                                                role="tab" data-toggle="tab">Criteria {{ $i }}</a>
-                                        </li>
-                                    @endfor
+                                    {{-- @isset($criteria)
+                                    @php $listcrit=array(); @endphp
+                                    @foreach($criteria as $key1=>$ctr1)
+                                    @foreach($ctr1 as $key2=>$ctr2)
+                                        @php $listcrit[]=$ctr2->criteria_id; @endphp
+                                    @endforeach
+                                    @endforeach
                                     @endisset
-                                    {{-- <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab"
-                                            data-toggle="tab">Criteria 2</a></li>
-                                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
-                                            data-toggle="tab">Criteria 3</a></li>
-                                    <li role="presentation"><a href="#Section1" aria-controls="home" role="tab"
+                                    @for($i=1;count(array_unique($listcrit))>=$i;$i++)
+                                        <li role="presentation" class="{{$i==1?'active':''}}"><a href="#Section{{$listcrit[$i]}}" aria-controls="home"
+                                                role="tab" data-toggle="tab">Criteria {{$i}}</a>
+                                        </li>
+                                   @endfor --}}
+                                    <li role="presentation" class="active"><a href="#Section1" aria-controls="profile" role="tab"
                                             data-toggle="tab">Criteria 1</a></li>
                                     <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab"
-                                            data-toggle="tab">Criteria 2</a></li>
+                                        data-toggle="tab">Criteria 2</a></li>
                                     <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
                                             data-toggle="tab">Criteria 3</a></li>
-                                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
-                                            data-toggle="tab">Criteria 3</a></li> --}}
+                                    <li role="presentation"><a href="#Section4" aria-controls="home" role="tab"
+                                            data-toggle="tab">Criteria 4</a></li>
+                                    <li role="presentation"><a href="#Section5" aria-controls="profile" role="tab"
+                                            data-toggle="tab">Criteria 5</a></li>
+                                    <li role="presentation"><a href="#Section6" aria-controls="messages" role="tab"
+                                            data-toggle="tab">Criteria 6</a></li>
+                                    <li role="presentation"><a href="#Section7" aria-controls="messages" role="tab"
+                                            data-toggle="tab">Criteria 7</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabs">
                                     @isset($criteria)
-                                    @php $cindex=1; @endphp
+                                    {{-- @php $cindex=1; @endphp --}}
                                     @foreach($criteria as $crit_data)
                                     @foreach($crit_data as $all_data)
-                                    <div role="tabpanel" class="tab-pane fade in {{$cindex==1?'active':''}}" id="Section{{$all_data->criteria_id}}">
+                                    
+                                    <div role="tabpanel" class="tab-pane fade in {{$all_data->criteria_id==1?'active':''}}" id="Section{{$all_data->criteria_id}}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="panel-group" id="accordion" role="tablist"
@@ -247,19 +256,14 @@
                                                                     data-parent="#accordion" href="#collapseOne"
                                                                     aria-expanded="true" aria-controls="collapseOne">
                                                                     <span>1</span>
-                                                                    Section 1
+                                                                    {{$all_data->name}}
                                                                 </a>
                                                             </h4>
                                                         </div>
                                                         <div id="collapseOne" class="panel-collapse collapse in"
                                                             role="tabpanel" aria-labelledby="headingOne">
                                                             <div class="panel-body">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                    Praesent nisl lorem, dictum id pellentesque at,
-                                                                    vestibulum ut arcu. Curabitur erat libero, egestas eu
-                                                                    tincidunt ac, rutrum ac justo. Vivamus condimentum
-                                                                    laoreet lectus, blandit posuere tortor aliquam vitae.
-                                                                    Curabitur molestie eros. </p>
+                                                                <p> anil </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -267,8 +271,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     @endforeach
-                                    @php $cindex++; @endphp
+                                    {{-- @php $cindex++; @endphp --}}
                                     @endforeach
                                     @endisset
                                     {{-- <div role="tabpanel" class="tab-pane fade" id="Section2">
