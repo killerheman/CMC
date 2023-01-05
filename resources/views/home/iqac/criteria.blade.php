@@ -274,7 +274,7 @@
                                                                     </a>
                                                                 </h4>
                                                             </div>
-                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse"
                                                                 role="tabpanel" aria-labelledby="heading{{ $data->id }}">
                                                                 <div class="panel-body">
                                                                     <a href="{{ asset($data->path ?? '') }}">View Data</a>
@@ -304,7 +304,7 @@
                                                                     </a>
                                                                 </h4>
                                                             </div>
-                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse "
                                                                 role="tabpanel" aria-labelledby="heading{{ $data->id }}">
                                                                 <div class="panel-body">
                                                                     <a href="{{ asset($data->path ?? '') }}">View Data</a>

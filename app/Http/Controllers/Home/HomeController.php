@@ -318,13 +318,13 @@ class HomeController extends Controller
     }
 
     public function criteria(){
-        $criteria1 = Criteria::where('criteria_id',1)->get();
-        $criteria2 = Criteria::where('criteria_id',2)->get();
-        $criteria3 = Criteria::where('criteria_id',3)->get();
-        $criteria4 = Criteria::where('criteria_id',4)->get();
-        $criteria5 = Criteria::where('criteria_id',5)->get();
-        $criteria6 = Criteria::where('criteria_id',6)->get();
-        $criteria7 = Criteria::where('criteria_id',7)->get();
+        $criteria1 = Criteria::where('criteria_id',1)->orderBy('name')->get();
+        $criteria2 = Criteria::where('criteria_id',2)->orderBy('name')->get();
+        $criteria3 = Criteria::where('criteria_id',3)->orderBy('name')->get();
+        $criteria4 = Criteria::where('criteria_id',4)->orderBy('name')->get();
+        $criteria5 = Criteria::where('criteria_id',5)->orderBy('name')->get();
+        $criteria6 = Criteria::where('criteria_id',6)->orderBy('name')->get();
+        $criteria7 = Criteria::where('criteria_id',7)->orderBy('name')->get();
         return view('home.iqac.criteria',compact('criteria1', 'criteria2','criteria3','criteria4','criteria5', 'criteria6','criteria7'));
     }
 
