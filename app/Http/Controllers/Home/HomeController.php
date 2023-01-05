@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Criteria;
 use App\Models\Event;
 use App\Models\EventGallery;
 use App\Models\SessionWiseModel;
@@ -317,7 +318,14 @@ class HomeController extends Controller
     }
 
     public function criteria(){
-        return view('home.iqac.criteria');
+        $criteria1 = Criteria::where('criteria_id',1)->get();
+        $criteria2 = Criteria::where('criteria_id',2)->get();
+        $criteria3 = Criteria::where('criteria_id',3)->get();
+        $criteria4 = Criteria::where('criteria_id',4)->get();
+        $criteria5 = Criteria::where('criteria_id',5)->get();
+        $criteria6 = Criteria::where('criteria_id',6)->get();
+        $criteria7 = Criteria::where('criteria_id',7)->get();
+        return view('home.iqac.criteria',compact('criteria1', 'criteria2','criteria3','criteria4','criteria5', 'criteria6','criteria7'));
     }
 
 }

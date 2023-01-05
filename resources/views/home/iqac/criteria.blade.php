@@ -201,8 +201,8 @@
                 @include('home.sidebar.iqac', ['active' => 2])
 
                 <article class="content-wrapper col-md-10 col-sm-8">
-                    <h3 class="title">
-                        Criteria</h3>
+                    <h3 class="title text-center">
+                        Criteria 2020-21</h3>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -215,60 +215,226 @@
                                             data-toggle="tab">Criteria 2</a></li>
                                     <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
                                             data-toggle="tab">Criteria 3</a></li>
-                                    <li role="presentation"><a href="#Section1" aria-controls="home" role="tab"
-                                            data-toggle="tab">Criteria 1</a></li>
-                                    <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab"
-                                            data-toggle="tab">Criteria 2</a></li>
-                                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
-                                            data-toggle="tab">Criteria 3</a></li>
-                                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab"
-                                            data-toggle="tab">Criteria 3</a></li>
+                                    <li role="presentation"><a href="#Section4" aria-controls="home" role="tab"
+                                            data-toggle="tab">Criteria 4</a></li>
+                                    <li role="presentation"><a href="#Section5" aria-controls="profile" role="tab"
+                                            data-toggle="tab">Criteria 5</a></li>
+                                    <li role="presentation"><a href="#Section6" aria-controls="messages" role="tab"
+                                            data-toggle="tab">Criteria 6</a></li>
+                                    <li role="presentation"><a href="#Section7" aria-controls="messages" role="tab"
+                                            data-toggle="tab">Criteria 7</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabs">
                                     <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                                        <h3>Curricular Aspects</h3>
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="panel-group" id="accordion" role="tablist"
-                                                    aria-multiselectable="true">
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading" role="tab" id="headingOne">
-                                                            <h4 class="panel-title">
-                                                                <a role="button" data-toggle="collapse"
-                                                                    data-parent="#accordion" href="#collapseOne"
-                                                                    aria-expanded="true" aria-controls="collapseOne">
-                                                                    <span>1</span>
-                                                                    Section 1
-                                                                </a>
-                                                            </h4>
-                                                        </div>
-                                                        <div id="collapseOne" class="panel-collapse collapse in"
-                                                            role="tabpanel" aria-labelledby="headingOne">
-                                                            <div class="panel-body">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                    Praesent nisl lorem, dictum id pellentesque at,
-                                                                    vestibulum ut arcu. Curabitur erat libero, egestas eu
-                                                                    tincidunt ac, rutrum ac justo. Vivamus condimentum
-                                                                    laoreet lectus, blandit posuere tortor aliquam vitae.
-                                                                    Curabitur molestie eros. </p>
+                                            @foreach ($criteria1 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="Section2">
-                                        <h3>Section 2</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna
-                                            a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in
-                                            tortor. Proin accumsan felis ac felis dapibus, non iaculis mi varius.</p>
+                                        <h3>Teacher-Learning & Evaluation</h3>
+                                        <div class="row">
+                                            @foreach ($criteria2 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="Section3">
-                                        <h3>Section 3</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna
-                                            a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in
-                                            tortor. Proin accumsan felis ac felis dapibus, non iaculis mi varius.</p>
+                                        <h3>Research, Innovations & Extension</h3>
+                                        <div class="row">
+                                            @foreach ($criteria3 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="Section4">
+                                        <h3>Infrastructure & Learning Resources</h3>
+                                        <div class="row">
+                                            @foreach ($criteria4 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="Section5">
+                                        <h3>Student Support & Progression</h3>
+                                        <div class="row">
+                                            @foreach ($criteria5 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="Section6">
+                                        <h3>Governance, Leadership & Management</h3>
+                                        <div class="row">
+                                            @foreach ($criteria6 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="Section7">
+                                        <h3>Institutional values of best practices</h3>
+                                        <div class="row">
+                                            @foreach ($criteria7 as $data)
+                                                <div class="col-md-12">
+                                                    <div class="panel-group" id="accordion" role="tablist"
+                                                        aria-multiselectable="true">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="heading{{ $data->id }}">
+                                                                <h4 class="panel-title">
+                                                                    <a role="button" data-toggle="collapse"
+                                                                        data-parent="#accordion" href="#collapse{{ $data->id }}"
+                                                                        aria-expanded="true" aria-controls="collapse{{ $data->id }}">
+                                                                        <span>{{ $loop->index+1 }}</span>
+                                                                        {{ $data->name ?? '' }}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="collapse{{ $data->id }}" class="panel-collapse collapse in"
+                                                                role="tabpanel" aria-labelledby="heading{{ $data->id }}">
+                                                                <div class="panel-body">
+                                                                    <a href="{{ asset($data->path ?? '') }}">View Data</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
