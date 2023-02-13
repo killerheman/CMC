@@ -55,12 +55,12 @@
                     <table class="table table-nowrap container table-responsive table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Sr.No.</th>
-                                <th scope="col">Event Name</th>
-                                <th scope="col">Thumbnail</th>
-                                <th scope="col">Created at</th>
+                                <th scope="col-1">Sr.No.</th>
+                                <th scope="col-8">Event Name</th>
+                                <th scope="col-1">Thumbnail</th>
+                                <th scope="col-1">Created at</th>
                                 @canany(['event_edit', 'event_delete'])
-                                <th scope="col">Action</th>
+                                <th scope="col-1">Action</th>
                                 @endcanany
                             </tr>
                         </thead>
