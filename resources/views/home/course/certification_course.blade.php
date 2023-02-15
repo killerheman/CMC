@@ -25,38 +25,13 @@
                                 <th>Medium of instruction</th>
                             </tr>
                         </thead>
-                        {{-- <tbody>
+                        <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Certificate Course in Forensic Science</td>
-                                <td>6 Months</td>
-                                <td>12<sup>th</sup></td>
-                                <td>English/Hindi</td>
+                                <td colspan="5" class="text-center">
+                                    Data will be uploaded soon..
+                                </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Certificate Course in Psychological Counseling</td>
-                                <td>6 Months</td>
-                                <td>12<sup>th</sup></td>
-                                <td>English/Hindi</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Effective Communication in English</td>
-                                <td>6 Months</td>
-                                <td>12<sup>th</sup></td>
-                                <td>English/Hindi</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Certificate Course in Computer Science</td>
-                                <td>6 Months</td>
-                                <td>12<sup>th</sup></td>
-                                <td>English/Hindi</td>
-                            </tr>
-
-
-                        </tbody> --}}
+                        </tbody>
                     </table>
                     <!--//table-->
                 </div>

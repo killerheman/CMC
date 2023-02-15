@@ -44,7 +44,7 @@ Route::get('/annual-report', [HomeController::class, 'annualReport'])->name('ann
 //Academics Menu
 Route::get('/under-graduate-courses', [HomeController::class, 'underGraduateCourses'])->name('underGraduateCourses');
 Route::get('/post-graduate-courses', [HomeController::class, 'postGraduateCourses'])->name('postGraduateCourses');
-Route::get('/diploma-courses', [HomeController::class, 'diplomaCourses'])->name('diplomaCourses');
+Route::get('/self-finance-ug-courses', [HomeController::class, 'diplomaCourses'])->name('diplomaCourses');
 Route::get('/certificate-courses', [HomeController::class, 'certificateCourses'])->name('certificateCourses');
 
 Route::get('/examination', [HomeController::class, 'examination'])->name('examination');
@@ -91,6 +91,7 @@ Route::get('/examination-form', [HomeController::class, 'examinationForm'])->nam
 Route::get('/download-syllabus', [HomeController::class, 'downloadSyllabus'])->name('downloadSyllabus');
 Route::get('/download-online-study-material', [HomeController::class, 'downloadOnlineStudyMaterial'])->name('downloadOnlineStudyMaterial');
 Route::get('/college-placement', [HomeController::class, 'collegePlacement'])->name('collegePlacement');
+Route::get('/regulation', [HomeController::class, 'regulation'])->name('regulation');
 
 //PhotoGallery Menu
 Route::get('/event-gallery', [HomeController::class, 'eventGallery'])->name('eventGallery');

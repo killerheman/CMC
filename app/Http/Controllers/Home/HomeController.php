@@ -237,6 +237,11 @@ class HomeController extends Controller
         return view('home.student.college_placements');
     }
 
+    public function regulation()
+    {
+        return view('home.regulation');
+    }
+
     //PhotoGallery Section
     public function eventGallery()
     {

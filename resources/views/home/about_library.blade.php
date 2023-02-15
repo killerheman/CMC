@@ -14,7 +14,7 @@
                 <article class="welcome col-md-8 col-sm-7">
                     <h3 class="title">Welcome to Central Library</h3>
                     <p><img class="img-responsive"
-                            src="{{ asset('frontend/assets/images/infrastructure/building.jpg') }}" alt="" /></p>
+                            src="{{ asset('frontend/assets/images/library/library.jpeg') }}" alt="" /></p>
                     <p>The college library, besides being a conventional storehouse of printed material, has
                         following segments</p>
                     <ul class="custom-list-style">
@@ -64,40 +64,6 @@
                         </div>
                         <!--//table-responsive-->
                     </div>
-                    <table width="100%">
-                        <tr>
-                            <td>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Library"
-                                    href="assets/images/CollegeInfrastructure/Library/Library-2.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Library/Thumb/Library-2.jpg"
-                                        alt="Library" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Library"
-                                    href="assets/images/CollegeInfrastructure/Library/Library-3.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Library/Thumb/Library-3.jpg"
-                                        alt="Library" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Library"
-                                    href="assets/images/CollegeInfrastructure/Library/Library-5.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Library/Thumb/Library-5.jpg"
-                                        alt="Library" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Reading Room"
-                                    href="assets/images/CollegeInfrastructure/Library/Library-4.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Library/Thumb/Library-4.jpg"
-                                        alt="Reading Room" />
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
 
                 </article>
                 <!--//page-content-->

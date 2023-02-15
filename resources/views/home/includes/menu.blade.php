@@ -38,10 +38,10 @@
                             <a class="trigger" tabindex="-1" href="Academics-CoursesUG.html">Courses<i
                                     class="fa fa-angle-right"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a tabindex="-1" href="{{ route('underGraduateCourses') }}">Under-Graduate Courses</a>
+                                <li><a tabindex="-1" href="{{ route('underGraduateCourses') }}">U. G. Courses</a>
                                 </li>
-                                <li><a href="{{ route('postGraduateCourses') }}">Post-Graduate Courses</a></li>
-                                <li><a href="{{ route('diplomaCourses') }}">Diploma Courses</a></li>
+                                <li><a href="{{ route('diplomaCourses') }}">Self-finance U.G. Courses</a></li>
+                                <li><a href="{{ route('postGraduateCourses') }}">P.G. Courses</a></li>
                                 <li><a href="{{ route('certificateCourses') }}">Certificate Courses</a></li>
                             </ul>
                         </li>
@@ -60,7 +60,7 @@
                         <li><a href="{{ route('informationBulletinAdmission') }}">Information Bulletin Admission</a>
                         </li>
                         <li><a href="{{ route('admissionSchedule') }}">Admission Schedule</a></li>
-                        <li><a href="{{ route('eligibilityCriteria') }}">Eligibility Criteria</a></li>
+                        {{-- <li><a href="{{ route('eligibilityCriteria') }}">Eligibility Criteria</a></li> --}}
                         <li><a href="{{ route('admissionProcedure') }}">Admission Procedure</a></li>
                         <li><a href="{{ route('seatsOffered') }}">Seats Offered</a></li>
                         <li><a href="http://lnmu.ac.in/">Apply Online</a></li>
@@ -105,7 +105,7 @@
                         <li><a href="http://lnmu.ac.in/">Result</a></li>
                         <li><a href="{{ route('examinationDatesheet') }}">Semester-End Examination Datesheet</a></li>
                         <li><a href="http://lnmu.ac.in/">Examination Form</a></li>
-                        <li class="dropdown-submenu">
+                        {{-- <li class="dropdown-submenu">
                             <a class="trigger" tabindex="-1" href="#" data-close-others="false">Downloads<i
                                     class="fa fa-angle-right"></i></a>
                             <ul class="dropdown-menu">
@@ -113,8 +113,9 @@
                                 <li><a tabindex="-1" href="{{ route('downloadOnlineStudyMaterial') }}">Online Study
                                         Material</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li><a href="{{ route('collegePlacement') }}">Placements</a></li>
+                        <li><a href="{{ route('regulation') }}">Regulation</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
