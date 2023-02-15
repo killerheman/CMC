@@ -39,6 +39,7 @@ Route::get('/from-vice-chancellor-desk', [HomeController::class, 'viceChancellor
 Route::get('/from-principal-desk', [HomeController::class, 'principalDesk'])->name('principalDesk');
 Route::get('/college-achievements', [HomeController::class, 'collegeAchievements'])->name('collegeAchievements');
 Route::get('/administration-committees', [HomeController::class, 'administrationCommittees'])->name('administrationCommittees');
+Route::get('/organogram', [HomeController::class, 'organogram'])->name('organogram');
 Route::get('/annual-report', [HomeController::class, 'annualReport'])->name('annualReport');
 
 //Academics Menu

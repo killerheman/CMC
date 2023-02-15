@@ -9,6 +9,7 @@
             <li class="{{ $active == 5 ? 'active' : '' }}"><a href="{{ route('collegeAchievements') }}">Achievements</a></li>
             <li class="{{ $active == 6 ? 'active' : '' }}"><a href="{{ route('administrationCommittees') }}">Administration & Committees</a></li>
             <li class="{{ $active == 7 ? 'active' : '' }}"><a href="{{ route('annualReport') }}">Annual Report</a></li>
+            <li class="{{ $active == 8 ? 'active' : '' }}"><a href="{{ route('organogram') }}">Organogram</a></li>
             <li></li>
         </ul>
     </section>

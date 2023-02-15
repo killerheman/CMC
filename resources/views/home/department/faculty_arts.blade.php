@@ -14,7 +14,7 @@
                 @include('home.sidebar.department', ['active' => 1])
 
                 <div class="team-wrapper col-md-10 col-sm-7">
-                    <h2 class="no-margin-top has-divider text-highlight">Faculty of Arts</h2>
+                    <h2 class="no-margin-top has-divider text-highlight">Faculty of Arts & Humanities</h2>
                     <h3 class="no-margin-top has-divider text-highlight">Department of English</h3>
 
                     <div class="row page-row">

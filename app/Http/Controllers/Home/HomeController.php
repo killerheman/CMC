@@ -57,6 +57,11 @@ class HomeController extends Controller
         return view('home.administration_committees');
     }
 
+    public function organogram()
+    {
+        return view('home.organogram');
+    }
+
     public function annualReport()
     {
         return view('home.annual_report');

@@ -25,7 +25,9 @@
                         <li><a href="{{ route('principalDesk') }}">From Principal's Desk</a></li>
                         <li><a href="{{ route('collegeAchievements') }}">Achievements</a></li>
                         <li><a href="{{ route('administrationCommittees') }}">Administration & Committtes</a></li>
+                        <li><a href="{{ route('organogram') }}">Organogram</a></li>
                         <li><a href="{{ route('annualReport') }}">Annual Report</a></li>
+                        <li><a href="#">Code of conduct</a></li>
 
                     </ul>
                 </li>
@@ -48,6 +50,7 @@
                         <li><a href="{{ route('examination') }}">Examination and Assesments</a></li>
                         <li><a href="{{ route('facultyArts') }}">Departments & Faculties</a></li>
                         <li><a href="{{ route('collegeResearch') }}">Research</a></li>
+                        <li><a href="https://lnmu.ac.in/academic-calendar">Academic Calendar</a></li>
                         <li><a href="{{ route('distanceLearningCenter') }}">Distance Learning Centre</a></li>
 
                     </ul>
@@ -60,7 +63,7 @@
                         <li><a href="{{ route('informationBulletinAdmission') }}">Information Bulletin Admission</a>
                         </li>
                         <li><a href="{{ route('admissionSchedule') }}">Admission Schedule</a></li>
-                        {{-- <li><a href="{{ route('eligibilityCriteria') }}">Eligibility Criteria</a></li> --}}
+                        <li><a href="{{ route('eligibilityCriteria') }}">Eligibility Criteria</a></li>
                         <li><a href="{{ route('admissionProcedure') }}">Admission Procedure</a></li>
                         <li><a href="{{ route('seatsOffered') }}">Seats Offered</a></li>
                         <li><a href="http://lnmu.ac.in/">Apply Online</a></li>

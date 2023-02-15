@@ -15,7 +15,7 @@
 
                 <div class="team-wrapper col-md-10 col-sm-7">
                     <h2 class="no-margin-top has-divider text-highlight">Faculty of Commerce</h2>
-                    {{-- <h3 class="no-margin-top has-divider text-highlight">Department</h3> --}}
+                    <h3 class="no-margin-top has-divider text-highlight">Department of Accounting & Finance</h3>
 
                     <div class="row page-row">
                         <div class="col-sm-4">
