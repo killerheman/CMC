@@ -15,8 +15,14 @@
 
                 <article class="content-wrapper col-md-10 col-sm-8">
                     <h2 class="no-margin-top has-divider text-highlight">Hostel Facilities</h2>
-                    <p><img class="img-responsive"
-                            src="{{ asset('frontend/assets/images/infrastructure/building.jpg') }}" alt="" /></p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="img-responsive" src="{{ asset('frontend/assets/images/misc/solar_facility.jpeg') }}" style="height: 350px; width:600px;"  alt="" />
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-responsive" src="{{ asset('frontend/assets/images/misc/toilet.jpeg') }}" style="height: 350px; width:600px;" alt="" />
+                        </div>
+                    </div>
                     <p>A number of students from other cities and states are studying in the college. To
                         provide accommodation to both boys and girls, the college is providing accommodation
                         facility. There is a hostel for the girls with a capacity of 155 girls and there is
@@ -45,60 +51,6 @@
                         <li><i class="fa fa-star"></i>Medical facilities </li>
                         <li><i class="fa fa-star"></i>Furnished guest house for the parents of inmates</li>
                     </ul>
-                    <table>
-                        <tr>
-                            <td>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Girls Hostel"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GirlsHostel-1.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GirlsHostel-1.jpg"
-                                        alt="Girls Hostel" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Computer Facility"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GSComputer.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSComputer.jpg"
-                                        alt="Computer Facility" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Outdoor Ground"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GSGround.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSGround.jpg"
-                                        alt="Outdoor Ground" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Gym" href="assets/images/CollegeInfrastructure/Hostel/GSGym.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSGym.jpg"
-                                        alt="Gym" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Indoor Games"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GSIndoor.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSIndoor.jpg"
-                                        alt="Indoor Games" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Mess Facility"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GSMess.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSMess.jpg"
-                                        alt="Mess Facility" />
-                                </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                    title="Yoga Center"
-                                    href="assets/images/CollegeInfrastructure/Hostel/GSYoga.jpg">
-                                    <img class="img-responsive img-thumbnail"
-                                        src="assets/images/CollegeInfrastructure/Hostel/GSYoga.jpg"
-                                        alt="Yoga Center" />
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
                 </article>
                 <!--//page-content-->
             </div>

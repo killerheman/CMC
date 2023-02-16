@@ -15,9 +15,9 @@
 
                 <article class="content-wrapper col-md-10 col-sm-8">
                     <h2 class="no-margin-top has-divider text-highlight">Medical Facilities</h2>
-                    <p><img class="img-responsive"
+                    {{-- <p><img class="img-responsive"
                             src="{{ asset('frontend/assets/images/infrastructure/building.jpg') }}" alt="" />
-                    </p>
+                    </p> --}}
                     <p>All the departments of the college have been provided with first-aid kits to meet any
                         emergency. Medical centres are situated quite close to the college where patients
                         from the college are attended on priority bases. </p>

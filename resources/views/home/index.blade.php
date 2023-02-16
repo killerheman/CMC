@@ -67,7 +67,7 @@
                         <p>No events uploaded</p>
                     @endif
 
-                    <a class="read-more" href="#">All events<i class="fa fa-chevron-right"></i></a>
+                    <a class="read-more" href="{{ route('eventGallery') }}">All events<i class="fa fa-chevron-right"></i></a>
                 </div>
                 <!--//section-content-->
             </section>

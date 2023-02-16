@@ -15,8 +15,8 @@
 
                 <article class="content-wrapper col-md-10 col-sm-8">
                     <h2 class="no-margin-top has-divider text-highlight">NCC, NSS & Scouts and Guides</h2>
-                    <p><img class="img-responsive" src="{{ asset('frontend/assets/images/infrastructure/building.jpg') }}"
-                            alt="" /></p>
+                    <p><img class="img-responsive" src="{{ asset('frontend/assets/images/infrastructure/ncc_office.jpeg') }}"
+                            alt="" style="height: 400px; width: 800px;" /></p>
                     <h2 class="has-divider text-highlight">National Cadet Corps (NCC)</h2>
                     <p>National Cadet Corps is a voluntary Tri-Services Organization , comprising the Army,
                         Navy and Air Force, engaged in grooming the youth of the country into disciplined

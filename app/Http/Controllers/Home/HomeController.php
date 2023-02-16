@@ -22,7 +22,7 @@ class HomeController extends Controller
         $tenders = Notice::where('category','tenders')->orderBy('id','desc')->get();
         $topnotices = Notice::orderBy('id','desc')->take(3)->get();
         // dd($topnotices);
-        $events = Event::all();
+        $events = Event::take(5)->get();
         return view('home.index', compact('notices', 'events','topnotices','tenders', 'banners'));
     }
 
