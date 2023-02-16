@@ -37,7 +37,7 @@
                     <h4 class="card-title mb-0 flex-grow-1">Manage {{ $event->name }}</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
-                    <table class="table table-nowrap container">
+                    <table class="table container table-responsive table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Sr.No.</th>
