@@ -52,7 +52,7 @@
                     <h4 class="card-title mb-0 flex-grow-1">Manage Events</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
-                    <table class="table table-nowrap container table-responsive table-hover">
+                    <table class="table container table-responsive table-hover">
                         <thead>
                             <tr>
                                 <th scope="col-1">Sr.No.</th>
@@ -68,11 +68,11 @@
                             @foreach ($events as $data)
                                 <tr>
                                     <th>{{ $loop->index + 1 }}</th>
-                                    <td>{{ $data->name }}</td>
+                                    <td style="word-wrap: break-word;">{{ $data->name }}</td>
                                     <td><img src="{{ asset($data->thumbnail ?? '') }}" alt="{{ $data->name ?? ''}}" height="100" width="200"/></td>
                                     <td>{{ $data->created_at }}</td>
                                     <td>
-                                        <a href="{{ route('admin.gallery.show', $data->id) }}" class="btn btn-warning">View Image</i></a>
+                                        <a href="{{ route('admin.gallery.show', $data->id) }}" class="btn btn-warning">View/Upload Image</i></a>
                                     </td>
                                     @canany(['event_edit', 'event_delete'])
                                     <td>
