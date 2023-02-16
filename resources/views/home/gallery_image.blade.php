@@ -1,18 +1,18 @@
-@extends('home.includes.layout', ['title' => 'College Gallery'])
+@extends('home.includes.layout', ['title' => 'Event Gallery'])
 @section('headerarea')
 @endsection
 @section('content')
     <div class="page-wrapper">
 
         <header class="page-heading clearfix">
-            <div class="text-effect" data-content="College Gallery">
-                <span>College Gallery</span>
+            <div class="text-effect" data-content="Event Gallery">
+                <span>Event Gallery</span>
             </div>
             <div class="breadcrumbs pull-right">
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs-label">You are here:</li>
                     <li><a href="Default.html">Home</a><i class="fa fa-angle-right"></i></li>
-                    <li><a href="GalleryAlbum.html">Gallery</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="GalleryAlbum.html">Event Gallery</a><i class="fa fa-angle-right"></i></li>
                     <li class="current"><span id="ctl00_ContentPlaceHolder1_lblSideHeading">{{ $event->name }}</span></li>
                 </ul>
             </div>

@@ -40,32 +40,47 @@
                             <td>
                                 <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                                     title="Administrative Block"
-                                    href="{{ asset('frontend/assets/images/infrastructure/bba_block.jpeg') }}"><img
+                                    href="{{ asset('frontend/assets/images/infrastructure/block1.jpg') }}"><img
                                         class="img-responsive img-thumbnail"
-                                        src="{{ asset('frontend/assets/images/infrastructure/bba_block.jpeg') }}"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block1.jpg') }}"
                                         alt="Administrative Block"></a>
-                                        <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                        title="Academic Block"
-                                        href="{{ asset('frontend/assets/images/home/banner1.jpg') }}"><img
-                                            class="img-responsive img-thumbnail"
-                                            src="{{ asset('frontend/assets/images/home/banner1.jpg') }}"
-                                            alt="Academic Block">
-                                        </a>
                                 <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                                     title="Academic Block"
-                                    href="{{ asset('frontend/assets/images/infrastructure/classroom.jpeg') }}"><img
+                                    href="{{ asset('frontend/assets/images/infrastructure/block2.jpg') }}"><img
                                         class="img-responsive img-thumbnail"
-                                        src="{{ asset('frontend/assets/images/infrastructure/classroom.jpeg') }}"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block2.jpg') }}" alt="Academic Block">
+                                </a>
+                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
+                                    title="Academic Block"
+                                    href="{{ asset('frontend/assets/images/infrastructure/block3.jpg') }}"><img
+                                        class="img-responsive img-thumbnail"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block3.jpg') }}"
                                         alt="Academic Block">
-                                    </a>
+                                </a>
 
-                                        <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
-                                        title="Academic Block"
-                                        href="{{ asset('frontend/assets/images/infrastructure/builidng1.jpeg') }}"><img
-                                            class="img-responsive img-thumbnail"
-                                            src="{{ asset('frontend/assets/images/infrastructure/builidng1.jpeg') }}"
-                                            alt="Academic Block">
-                                        </a>
+                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
+                                    title="Academic Block"
+                                    href="{{ asset('frontend/assets/images/infrastructure/block4.jpg') }}"><img
+                                        class="img-responsive img-thumbnail"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block4.jpg') }}"
+                                        alt="Academic Block">
+                                </a>
+
+                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
+                                    title="Academic Block"
+                                    href="{{ asset('frontend/assets/images/infrastructure/block5.jpg') }}"><img
+                                        class="img-responsive img-thumbnail"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block5.jpg') }}"
+                                        alt="Academic Block">
+                                </a>
+
+                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
+                                    title="Academic Block"
+                                    href="{{ asset('frontend/assets/images/infrastructure/block6.jpg') }}"><img
+                                        class="img-responsive img-thumbnail"
+                                        src="{{ asset('frontend/assets/images/infrastructure/block6.jpg') }}"
+                                        alt="Academic Block">
+                                </a>
 
 
 
@@ -100,13 +115,13 @@
                                         src="{{ asset('frontend/assets/images/infrastructure/computer_lab2.jpeg') }}"
                                         alt="Research Lab / Digital Librrary" />
                                 </a>
-                                <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
+                                {{-- <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                                     title="Research Lab / Digital Librrary"
                                     href="{{ asset('frontend/assets/images/infrastructure/computer_lab3.jpg') }}">
                                     <img class="img-responsive img-thumbnail"
                                         src="{{ asset('frontend/assets/images/infrastructure/computer_lab3.jpg') }}"
                                         alt="Research Lab / Digital Librrary" />
-                                </a>
+                                </a> --}}
                             </td>
                         </tr>
                         <tr>

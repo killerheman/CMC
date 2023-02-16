@@ -14,7 +14,7 @@
                 <article class="welcome col-md-8 col-sm-7">
                     <h3 class="title">Welcome to Central Library</h3>
                     <p><img class="img-responsive"
-                            src="{{ asset('frontend/assets/images/library/library8.jpeg') }}" alt="" style="height: 500px; width: 700px;" /></p>
+                            src="{{ asset('frontend/assets/images/library/library14.jpg') }}" alt="" style="height: 500px; width: 700px;" /></p>
                     <p>The college library, besides being a conventional storehouse of printed material, has
                         following segments</p>
                     <ul class="custom-list-style">
@@ -160,30 +160,30 @@
 
                         <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                             title="Library"
-                            href="{{ asset('frontend/assets/images/library/library5.jpeg') }}">
+                            href="{{ asset('frontend/assets/images/library/library9.jpg') }}">
                             <img class="img-responsive img-thumbnail"
-                                src="{{ asset('frontend/assets/images/library/library5.jpeg') }}"
+                                src="{{ asset('frontend/assets/images/library/library9.jpg') }}"
                                 alt="Library" />
                         </a>
                         <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                             title="Library"
-                            href="{{ asset('frontend/assets/images/library/library6.jpeg') }}">
+                            href="{{ asset('frontend/assets/images/library/library10.jpg') }}">
                             <img class="img-responsive img-thumbnail"
-                                src="{{ asset('frontend/assets/images/library/library6.jpeg') }}"
+                                src="{{ asset('frontend/assets/images/library/library10.jpg') }}"
                                 alt="Library" />
                         </a>
                         <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                             title="Library"
-                            href="{{ asset('frontend/assets/images/library/library7.jpeg') }}">
+                            href="{{ asset('frontend/assets/images/library/library11.jpg') }}">
                             <img class="img-responsive img-thumbnail"
-                                src="{{ asset('frontend/assets/images/library/library7.jpeg') }}"
+                                src="{{ asset('frontend/assets/images/library/library11.jpg') }}"
                                 alt="Library" />
                         </a>
                         <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]"
                             title="Library"
-                            href="{{ asset('frontend/assets/images/library/library8.jpeg') }}">
+                            href="{{ asset('frontend/assets/images/library/library12.jpg') }}">
                             <img class="img-responsive img-thumbnail"
-                                src="{{ asset('frontend/assets/images/library/library8.jpeg') }}"
+                                src="{{ asset('frontend/assets/images/library/library12.jpg') }}"
                                 alt="Library" />
                         </a>
 
