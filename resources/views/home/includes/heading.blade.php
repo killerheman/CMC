@@ -5,11 +5,6 @@
             <ul class="logos">
 
                 <li class="col-md-2 col-sm-2 col-xs-4">
-                    <a href="#">
-                        <img class="img-responsive" src="{{ asset('frontend/assets/images/PromoSlider/NAAC.png')}}"
-                            alt="Quick Link - NAAC (Cycle-II)"></a>
-                </li>
-                <li class="col-md-2 col-sm-2 col-xs-4">
                     <a href="{{ route('underGraduateCourses') }}">
                         <img class="img-responsive" src="{{ asset('frontend/assets/images/PromoSlider/Courses.png')}}"
                             alt="Quick Link - Courses"></a>
@@ -32,7 +27,12 @@
                 <li class="col-md-2 col-sm-2 col-xs-4">
                     <a href="#">
                         <img class="img-responsive" src="{{ asset('frontend/assets/images/PromoSlider/Alumni.png')}}"
-                            alt="Quick Link - Scholarships"></a>
+                            alt="Alumni Portal"></a>
+                </li>
+                <li class="col-md-2 col-sm-2 col-xs-4">
+                    <a href="{{ route('eventGallery') }}">
+                        <img class="img-responsive" src="{{ asset('frontend/assets/images/PromoSlider/event_gallery.png')}}"
+                            alt="Event Gallery"></a>
                 </li>
             </ul>
             <!--//slides-->

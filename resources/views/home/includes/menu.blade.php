@@ -131,14 +131,14 @@
                         <li><a href="{{ route('iqacComposition') }}">Comparison</a></li>
                         <li><a href="{{ route('minutesOfMeeting') }}">Minutes of meeting</a></li>
                         <li><a href="{{ route('ssr') }}">SSR</a></li>
-                        <li><a href="{{ route('aisheReport') }}">AISHE Report</a></li>
+                        {{-- <li><a href="{{ route('aisheReport') }}">AISHE Report</a></li> --}}
                         <li><a href="{{ route('naacGrade') }}">NAAC Grade</a></li>
                         <li><a href="{{ route('sss') }}">Student's Satisfaction Survey</a></li>
-                        <li><a href="{{ route('nirf') }}">NIRF</a></li>
+                        {{-- <li><a href="{{ route('nirf') }}">NIRF</a></li> --}}
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{ route('eventGallery') }}" >Event Gallery</a></li>
-                <li class="nav-item"><a href="{{ route('news') }}" >News</a></li>
+                <li class="nav-item"><a href="{{ route('nirf') }}" >NIRF</a></li>
+                <li class="nav-item"><a href="{{ route('aisheReport') }}" >AISHE Report</a></li>
                 {{-- <li class="nav-item"><a href="{{ route('pressRelease') }}" >Press Release</a></li> --}}
             </ul>
             <!--//nav-->

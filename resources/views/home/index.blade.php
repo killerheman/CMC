@@ -211,6 +211,8 @@
                             (Student Edition)</a></p>
                     <p><a href="#"><i class="fa fa-caret-right"></i>Online
                             Study Material</a></p>
+                    <p><a href="{{ route('news') }}"><i class="fa fa-caret-right"></i>Press News</a></p>
+
                 </div>
                 <!--//section-content-->
             </section>

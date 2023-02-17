@@ -124,12 +124,6 @@
                                             </a>
                                         </h4>
                                     </div>
-                                    {{-- <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                                        aria-labelledby="headingOne">
-                                        <div class="panel-body">
-                                            <a href="#">AQAR 2020-21</a>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             @isset($session)
                             @foreach ($session as $data)
