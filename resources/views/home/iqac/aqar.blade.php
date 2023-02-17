@@ -133,7 +133,7 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                 data-parent="#accordion" href="#collapse{{$loop->index + 1}}" aria-expanded="false"
                                                 aria-controls="collapseTwo">
-                                                {{$data->session}}
+                                                AQAR {{$data->session}}
                                             </a>
                                         </h4>
                                     </div>
